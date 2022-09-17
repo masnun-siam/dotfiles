@@ -1,5 +1,5 @@
 (setq user-full-name "Masnun Siam"
-      user-mail-address "masnunsiam@gmail.com")
+      user-mail-address "j19i9wnq@duck.com")
 
 (set-frame-parameter (selected-frame) 'fullscreen 'maximized)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
