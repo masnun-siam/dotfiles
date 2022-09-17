@@ -1,0 +1,170 @@
+{
+  "Freezed model": {
+    "prefix": "frz",
+    "body": [
+      "import 'package:freezed_annotation/freezed_annotation.dart';\n",
+      "part '${TM_FILENAME_BASE}.freezed.dart';\n",
+      "@freezed",
+      "class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} with _$${1} {",
+      "\tfactory ${1}({",
+      "\t\trequired ${2:String id},",
+      "\t}) = _${1};",
+      "}"
+    ],
+    "description": "Freezed model"
+  },
+  "Freezed model Json": {
+    "prefix": "frzjs",
+    "body": [
+      "import 'package:freezed_annotation/freezed_annotation.dart';\n",
+      "part '${TM_FILENAME_BASE}.freezed.dart';",
+      "part '${TM_FILENAME_BASE}.g.dart';\n",
+      "@freezed",
+      "class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} with _$${1} {",
+      "\tfactory ${1}({",
+      "\t\trequired ${2:String id},",
+      "\t}) = _${1};",
+      "",
+      "\tfactory ${1}.fromJson(Map<String, dynamic> json) => ",
+      "\t\t_$${1}FromJson(json);",
+      "}"
+    ],
+    "description": "Freezed model with Json"
+  },
+  "Stacked View": {
+    "prefix": "stkv",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:stacked/stacked.dart';",
+      "",
+      "class ${1} extends StatelessWidget {",
+      "\tconst ${1}({Key? key}) : super(key: key);",
+      "",
+      "\t@override",
+      "\tWidget build(BuildContext context) {",
+      "\t\treturn ViewModelBuilder<${1}Model>.reactive(",
+      "\t\t\tbuilder: (context, model, child) => Scaffold(),",
+      "\t\t\tviewModelBuilder: () => ${1}Model(),",
+      "\t\t);",
+      "\t}",
+      "}"
+    ],
+    "description": "Stacked View"
+  },
+  "Stacked Form View": {
+    "prefix": "stkfv",
+    "body": [
+      "@FormView(fields: [",
+      "\tFormTextField(name: '${2:email}', initialValue: '${3:lorem}'),",
+      "])",
+      "class ${1}FormView extends StatelessWidget with $${1}FormView {",
+      "\t${1}FormView({Key? key}) : super(key: key);",
+      "",
+      "\t@override",
+      "\tWidget build(BuildContext context) {",
+      "\t\treturn ViewModelBuilder<${1}FormViewModel>.reactive(",
+      "\t\t\tbuilder: (context, model, child) => Scaffold(),",
+      "\t\t\tviewModelBuilder: () => ${1}FormViewModel(),",
+      "\t\t\tonModelReady: (viewModel) => listenToFormUpdated(viewModel),",
+      "\t\t);",
+      "\t}",
+      "}"
+    ],
+    "description": "Stacked Form View"
+  },
+  "Stacked View Model Widget": {
+    "prefix": "stkvw",
+    "body": [
+      "class ${1} extends ViewModelWidget<${2}ViewModel> {",
+      "\tconst ${1}({Key? key}) : super(key: key, reactive: true);",
+      "",
+      "\t@override",
+      "\tWidget build(BuildContext context, ${2}ViewModel viewModel) {",
+      "\t\treturn Container();",
+      "\t}",
+      "}"
+    ],
+    "description": "Stacked View"
+  },
+  "Stacked BaseViewModel": {
+    "prefix": "stkbvm",
+    "body": [
+      "import 'package:stacked/stacked.dart';",
+      "",
+      "class ${1}Model extends BaseViewModel {}"
+    ],
+    "description": "Stacked BaseViewModel"
+  },
+  "Mock Registration": {
+    "prefix": "testr",
+    "body": [
+      "${1} getAndRegister${1}() {",
+      "\t_removeRegistrationIfExists<${1}>();",
+      "\tfinal service = Mock${1}();",
+      "\tlocator.registerSingleton<${1}>(service);",
+      "\treturn service;",
+      "}"
+    ],
+    "description": "Creating a Mock Registration Function"
+  },
+  "Main Test Suite Setup": {
+    "prefix": "testm",
+    "body": [
+      "import 'package:flutter_test/flutter_test.dart';",
+      "",
+      "void main() {",
+      "\tgroup('${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} -', (){",
+      "",
+      "\t});",
+      "}"
+    ],
+    "description": "Main Test Suite Setup"
+  },
+  "Main Test Suite Setup with Services": {
+    "prefix": "testmr",
+    "body": [
+      "import 'package:flutter_test/flutter_test.dart';",
+      "",
+      "void main() {",
+      "\tgroup('${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} -', (){",
+      "\t\tsetUp(() => registerServices());",
+      "\t\ttearDown(() => unregisterServices());",
+      "\t});",
+      "}"
+    ],
+    "description": "Main Test Suite Setup with Services"
+  },
+  "Test Group Setup": {
+    "prefix": "testg",
+    "description": "Creates a Test group with a test",
+    "body": ["group('${1} -', () {", "\ttest('${2}', () {", "", "\t});", "});"]
+  },
+  "Single Test Setup": {
+    "prefix": "tests",
+    "description": "Creates a single test",
+    "body": ["test('${1}', () {", "", "});"]
+  },
+  "Basic test scaffolding": {
+    "prefix": "testscaffold",
+    "body": [
+      "import 'package:flutter_test/flutter_test.dart';",
+      "",
+      "void main() {",
+      "  late ${1:ClassName} sut;",
+      "",
+      "  setUp(() {",
+      "    sut = ${1:ClassName}();",
+      "  });",
+      "",
+      "  group('', () {});",
+      "}",
+      ""
+    ],
+    "description": "Basic test scaffolding"
+  },
+  "Test following the Arrange-Act-Assert pattern": {
+    "prefix": "testaaa",
+    "body": ["test(", "  \"$1\",", "  () async {", "    $2", "  },", ");"],
+    "description": "Test following the Arrange-Act-Assert pattern"
+  },
+}

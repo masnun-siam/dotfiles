@@ -1,0 +1,40 @@
+{
+    "bridge": {
+        "name": "Homebridge CA42",
+        "username": "0E:12:BC:F3:CA:42",
+        "port": 51703,
+        "pin": "155-62-500",
+        "advertiser": "bonjour-hap"
+    },
+    "accessories": [],
+    "platforms": [
+        {
+            "name": "Config",
+            "port": 8581,
+            "platform": "config"
+        },
+        {
+            "name": "TuyaWebPlatform",
+            "options": {
+                "username": "siamcse007@gmail.com",
+                "password": "Testing20@",
+                "countryCode": "91",
+                "platform": "tuya"
+            },
+            "defaults": [
+                {
+                    "id": "80431785a4e57c1110ea",
+                    "device_type": "fan",
+                    "fan_characteristics": [
+                        "Speed"
+                    ]
+                }
+            ],
+            "scenes": true,
+            "platform": "TuyaWebPlatform"
+        }
+    ],
+    "disabledPlugins": [
+        "homebridge-tuya-platform"
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "bridge": {
+        "name": "Homebridge CA42",
+        "username": "0E:12:BC:F3:CA:42",
+        "port": 51703,
+        "pin": "155-62-500",
+        "advertiser": "bonjour-hap"
+    },
+    "accessories": [],
+    "platforms": [
+        {
+            "name": "Config",
+            "port": 8581,
+            "platform": "config"
+        },
+        {
+            "options": {
+                "username": "siamcse007@gmail.com",
+                "password": "-!C!yTLgi6s7BFt",
+                "accessId": "3esua48k9pa4xx7ea8m8",
+                "accessKey": "7be90fa1775f4dba81ad90b38df1913b",
+                "lang": "en",
+                "projectType": "2",
+                "appSchema": "tuyaSmart",
+                "countryCode": 65,
+                "debug": false
+            },
+            "name": "TuyaPlatform",
+            "platform": "TuyaPlatform"
+        },
+        {
+            "devices": [
+                {
+                    "type": "SimpleLight",
+                    "name": "Light",
+                    "id": "80431785a4e57c1110ea",
+                    "key": "bc2def5fbfa4494e",
+                    "manufacturer": "msiamn",
+                    "model": "fan lamp switch"
+                }
+            ],
+            "platform": "TuyaLan"
+        },
+        {
+            "name": "TuyaWebPlatform",
+            "options": {
+                "username": "siamcse007@gmail.com",
+                "password": "Testing20@",
+                "countryCode": "880",
+                "platform": "tuya"
+            },
+            "scenes": false,
+            "platform": "TuyaWebPlatform"
+        }
+    ],
+    "disabledPlugins": []
+}
