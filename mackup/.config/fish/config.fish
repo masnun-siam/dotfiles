@@ -12,7 +12,7 @@ set -g theme_display_user yes
 set -g theme_hide_hostname no
 set -g theme_hostname always
 
-set -U BAT_THEME Nord 
+set -U BAT_THEME Dracula 
 set -U EDITOR nvim
 set -U FZF_CTRL_R_OPTS "--reverse --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 set -U FZF_DEFAULT_COMMAND "fd -H -E '.git'"
@@ -22,6 +22,8 @@ set -U FZF_TMUX_OPTS "-p"
 set -U KIT_EDITOR /opt/homebrew/bin/nvim
 set -U LANG en_US.UTF-8
 set -U LC_ALL en_US.UTF-8
+
+set -g CRAFTED_EMACS_HOME ~/.config/crafted-emacs
 
 # aliases
 # Changing "ls" to "exa"
