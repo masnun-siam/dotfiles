@@ -5,6 +5,9 @@ set -gx TERM xterm-256color
 starship init fish | source
 zoxide init fish | source
 
+# Ctrl + l to clear screen
+bind \cl 'for i in (seq 1 $LINES); echo; end; clear; commandline -f repaint'
+
 # theme
 set -g theme_color_scheme terminal-dark
 set -g fish_prompt_pwd_dir_length 1
@@ -33,6 +36,7 @@ alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 alias g git
+alias less bat
 command -qv nvim && alias vim nvim
 
 set -gx PATH bin $PATH
@@ -285,3 +289,10 @@ abbr vpi "nvim +PackerInstall"
 abbr vpu "nvim +PackerUpdate"
 abbr vpug "nvim +PackerUpgrade"
 abbr vt "nvim ~/.config/tmux/tmux.conf"
+abbr fpg "flutter pub get"
+abbr fpu "flutter pub upgrade"
+abbr fpum "flutter pub upgrade --major-versions"
+abbr fbb "flutter pub run build_runner build --delete-conflicting-outputs"
+abbr fbw "flutter pub run build_runner watch --delete-conflicting-outputs"
+abbr fpa "flutter pub add"
+abbr fpad "flutter pub add --dev"

@@ -478,7 +478,7 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-# colors: *Dracula
+colors: *Dracula
 
 key_bindings:
   - { key: Comma, mods: Command, chars: "\x02," }

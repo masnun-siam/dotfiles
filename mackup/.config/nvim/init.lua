@@ -16,4 +16,4 @@ if is_win then
   require('msiamn.windows')
 end
 
-vim.opt.guifont = { "BlexMono Nerd Font", ":h19" }
+vim.opt.guifont = { "SFMono Nerd Font", ":h19" }

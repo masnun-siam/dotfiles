@@ -46,6 +46,14 @@ SETUVAR _fish_abbr_dps:docker\x20ps\x20\x2d\x2dformat\x20\x27table\x20\x7b\x7b\x
 SETUVAR _fish_abbr_e:exit
 SETUVAR _fish_abbr_ee:espanso\x20edit
 SETUVAR _fish_abbr_er:espanso\x20restart
+SETUVAR _fish_abbr_fb:flutter\x20pub\x20run\x20build_runner\x20build\x20\x2d\x2ddelete\x2dconflicting\x2doutputs
+SETUVAR _fish_abbr_fbb:flutter\x20pub\x20run\x20build_runner\x20build\x20\x2d\x2ddelete\x2dconflicting\x2doutputs
+SETUVAR _fish_abbr_fbw:flutter\x20pub\x20run\x20build_runner\x20watch\x20\x2d\x2ddelete\x2dconflicting\x2doutputs
+SETUVAR _fish_abbr_fpa:flutter\x20pub\x20add
+SETUVAR _fish_abbr_fpad:flutter\x20pub\x20add\x20\x2d\x2ddev
+SETUVAR _fish_abbr_fpg:flutter\x20pub\x20get
+SETUVAR _fish_abbr_fpu:flutter\x20pub\x20upgrade
+SETUVAR _fish_abbr_fpum:flutter\x20pub\x20upgrade\x20\x2d\x2dmajor\x2dversions
 SETUVAR _fish_abbr_g:git\x20status
 SETUVAR _fish_abbr_ga:git\x20add\x20\x2e
 SETUVAR _fish_abbr_gb:git\x20branch\x20\x2dv
