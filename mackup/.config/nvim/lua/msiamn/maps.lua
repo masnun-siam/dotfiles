@@ -36,8 +36,8 @@ map('n', '<C-w><up>', '<C-w>+')
 map('n', '<C-w><down>', '<C-w>-')
 
 -- visual mode key binding
---map('v', '>', 'g>')
---map('v', '<', 'g<')
+map('v', '>', 'g>')
+map('v', '<', 'g<')
 
 -- Fix n and N. Keeping cursor in center
 map('n', 'n', 'nzz')
