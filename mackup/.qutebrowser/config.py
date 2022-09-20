@@ -57,9 +57,8 @@ config.bind("<Ctrl-x><Ctrl-e>", "open-editor", "insert")
 
 c.url.searchengines = {
     'DEFAULT': 'https://duckduckgo.com/?q={}', 
-    'am': 'https://www.amazon.com/s?k={}', 
     'aw': 'https://wiki.archlinux.org/?search={}', 
-    'goog': 'https://www.google.com/search?q={}', 
+    'g': 'https://www.google.com/search?q={}', 
     'hoog': 'https://hoogle.haskell.org/?hoogle={}', 
     're': 'https://www.reddit.com/r/{}', 
     'ub': 'https://www.urbandictionary.com/define.php?term={}', 
