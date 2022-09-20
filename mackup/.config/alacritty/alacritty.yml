@@ -5,9 +5,9 @@ live_config_reload: true
 env:
   TERM: xterm-256color
 
-import:
+# import:
   # - ~/.config/alacritty/aw/current.yml
-  - 'dracula.yml'
+  # - 'dracula.yml'
 
 shell:
   program: /opt/homebrew/bin/fish
@@ -365,7 +365,8 @@ schemes:
   SolarizedDark: &SolarizedDark
     # Default colors
     primary:
-      background: '#002b36' # base03
+      # background: '#002b36' # base03
+      background: '#1d1f21'
       foreground: '#839496' # base0
 
     # Cursor colors
@@ -399,7 +400,8 @@ schemes:
   SolarizedLight: &SolarizedLight
     # Default colors
     primary:
-      background: '#fdf6e3' # base3
+      # background: '#fdf6e3' # base3
+      background: '#1d1f21'
       foreground: '#657b83' # base00
 
     # Cursor colors
@@ -478,7 +480,7 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-colors: *Dracula
+# colors: *SolarizedDark
 
 key_bindings:
   - { key: Comma, mods: Command, chars: "\x02," }
