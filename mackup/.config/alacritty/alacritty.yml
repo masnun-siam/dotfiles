@@ -5,9 +5,9 @@ live_config_reload: true
 env:
   TERM: xterm-256color
 
-# import:
+import:
   # - ~/.config/alacritty/aw/current.yml
-  # - 'dracula.yml'
+  - 'dracula.yml'
 
 shell:
   program: /opt/homebrew/bin/fish

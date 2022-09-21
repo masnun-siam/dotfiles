@@ -193,5 +193,5 @@
   "dart.warnWhenEditingFilesInPubCache": false,
   "workbench.activityBar.visible": false,
   "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "One Dark Pro"
+  "workbench.colorTheme": "Solarized Dark"
 }

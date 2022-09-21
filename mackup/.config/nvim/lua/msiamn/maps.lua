@@ -36,9 +36,12 @@ map('n', '<C-w><up>', '<C-w>+')
 map('n', '<C-w><down>', '<C-w>-')
 
 -- visual mode key binding
-map('v', '>', 'g>')
-map('v', '<', 'g<')
+-- map('v', '>', 'g>')
+-- map('v', '<', 'g<')
 
 -- Fix n and N. Keeping cursor in center
 map('n', 'n', 'nzz')
 map('n', 'N', 'Nzz')
+
+-- map('n', '<C-t>', ':FlutterOutlineToggle<CR>' )
+map('n', '<C-h>', ':noh<CR>')

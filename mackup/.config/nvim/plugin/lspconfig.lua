@@ -22,10 +22,11 @@ local on_attach = function(_, bufnr)
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>FlutterOutlineToggle<CR>', opts)
   -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  -- buf_set_keymap('n', ';a', '<Cmd>:Lspsaga code_action<CR>', opts)
+  -- buf_set_keymap('n', ';a', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', ';F', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  buf_set_keymap('n', ';R', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  -- buf_set_keymap('n', ';R', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
 end
 
 protocol.CompletionItemKind = {
@@ -77,17 +78,29 @@ nvim_lsp.sourcekit.setup {
   on_attach = on_attach,
 }
 
+-- require("flutter-tools").setup {
+--   widget_guides = {
+--     enabled = true,
+--   },
+--   dev_tools = {
+--     autostart = true, -- autostart devtools server if not detected
+--     auto_open_browser = true, -- Automatically opens devtools in the browser
+--   },
+--   lsp = {
+--     cmd = { 'dart', 'language-server', '--lsp' },
+--   }
+-- } -- use defaults
 nvim_lsp.dartls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  -- cmd = {'dart', 'language-server', '--lsp'},
-  -- init_options = {
-  --   closingLabels = true,
-  --   flutterOutline = true,
-  --   onlyAnalyzeProjectsWithOpenFiles = true,
-  --   outline = true,
-  --   suggestFromUnimportedLibraries = true,
-  -- },
+  cmd = {'dart', 'language-server', '--lsp'},
+  init_options = {
+    closingLabels = true,
+    flutterOutline = true,
+    onlyAnalyzeProjectsWithOpenFiles = true,
+    outline = true,
+    suggestFromUnimportedLibraries = true,
+  },
 }
 
 nvim_lsp.sumneko_lua.setup {
@@ -135,3 +148,6 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
+
+-- Dart format on save
+-- vim.cmd 'au BufWritePre *.dart :DartFmt'

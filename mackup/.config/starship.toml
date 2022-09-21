@@ -1,5 +1,6 @@
 [aws]
 style = "bold #ffb86c"
+disabled = true
 
 [character]
 error_symbol = "[](bold #ff5555)"

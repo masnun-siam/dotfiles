@@ -41,3 +41,4 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+vim.opt.numberwidth = 5 -- Make the gutter wider by default

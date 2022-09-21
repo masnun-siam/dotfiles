@@ -61,13 +61,9 @@ packer.startup(function(use)
     end
   })
   use 'folke/tokyonight.nvim'
-  use({
-    "Pocco81/auto-save.nvim",
-    config = function()
-       require("auto-save").setup {
-        -- your config goes here
-        -- or just leave it empty :)
-       }
-    end,
-  })
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
+  use 'dart-lang/dart-vim-plugin'
+  use 'Pocco81/auto-save.nvim'
+  -- use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 end)
