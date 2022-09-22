@@ -43,5 +43,5 @@ map('n', '<C-w><down>', '<C-w>-')
 map('n', 'n', 'nzz')
 map('n', 'N', 'Nzz')
 
--- map('n', '<C-t>', ':FlutterOutlineToggle<CR>' )
+map('n', '<C-t>', ':LSoutlineToggle<CR>' )
 map('n', '<C-h>', ':noh<CR>')
