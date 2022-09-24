@@ -296,5 +296,20 @@
   {
     "key": "shift+alt+n",
     "command": "openinvim.openFile"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "dartFlutterOutline.focus",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "-editor.action.transposeLetters",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "-extension.vim_ctrl+t",
+    "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
   }
 ]

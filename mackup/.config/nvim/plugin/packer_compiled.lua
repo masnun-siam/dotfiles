@@ -180,6 +180,12 @@ _G.packer_plugins = {
     path = "/Users/siam/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-dap"] = {
+    config = { "\27LJ\2\né\3\0\0\6\0\17\0&6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0005\2\t\0006\3\5\0009\3\6\3'\5\a\0B\3\2\2'\4\b\0&\3\4\3>\3\1\2=\2\n\1=\1\3\0006\0\0\0'\2\1\0B\0\2\0029\0\v\0004\1\3\0005\2\f\0006\3\5\0009\3\6\3'\5\a\0B\3\2\2'\4\r\0&\3\4\3=\3\14\0026\3\5\0009\3\6\3'\5\a\0B\3\2\2'\4\15\0&\3\4\3=\3\16\2>\2\1\1=\1\3\0K\0\1\0\19flutterSdkPath\19/Tools/flutter\16dartSdkPath'/Tools/flutter/bin/cache/dart-sdk/\1\0\5\frequest\vlaunch\bcwd\23${workspaceFolder}\fprogram%${workspaceFolder}/lib/main.dart\ttype\tdart\tname\19Launch flutter\19configurations\targs\1\3\0\0\0\fflutter'/Tools/Dart-Code/out/dist/debug.js\tHOME\vgetenv\aos\1\0\2\ttype\15executable\fcommand\tnode\tdart\radapters\bdap\frequire\0" },
+    loaded = true,
+    path = "/Users/siam/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/siam/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -254,14 +260,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+try_loadstring("\27LJ\2\né\3\0\0\6\0\17\0&6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0005\2\t\0006\3\5\0009\3\6\3'\5\a\0B\3\2\2'\4\b\0&\3\4\3>\3\1\2=\2\n\1=\1\3\0006\0\0\0'\2\1\0B\0\2\0029\0\v\0004\1\3\0005\2\f\0006\3\5\0009\3\6\3'\5\a\0B\3\2\2'\4\r\0&\3\4\3=\3\14\0026\3\5\0009\3\6\3'\5\a\0B\3\2\2'\4\15\0&\3\4\3=\3\16\2>\2\1\1=\1\3\0K\0\1\0\19flutterSdkPath\19/Tools/flutter\16dartSdkPath'/Tools/flutter/bin/cache/dart-sdk/\1\0\5\frequest\vlaunch\bcwd\23${workspaceFolder}\fprogram%${workspaceFolder}/lib/main.dart\ttype\tdart\tname\19Launch flutter\19configurations\targs\1\3\0\0\0\fflutter'/Tools/Dart-Code/out/dist/debug.js\tHOME\vgetenv\aos\1\0\2\ttype\15executable\fcommand\tnode\tdart\radapters\bdap\frequire\0", "config", "nvim-dap")
+time([[Config for nvim-dap]], false)
 -- Config for: nvim-surround
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

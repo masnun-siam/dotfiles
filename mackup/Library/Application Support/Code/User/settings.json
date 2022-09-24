@@ -45,6 +45,7 @@
       "after": ["<esc>"]
     }
   ],
+  
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<space>"],
@@ -76,12 +77,20 @@
     {
       "before": ["s", "f"],
       "commands": ["file-browser.open"]
-    }
+    },
+    {
+      "before": [";", "F"],
+      "commands": ["Format Buffer"]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["<space>"],
       "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [";", "a"],
+      "commands": ["keyboard-quickfix.openQuickFix"]
     },
     {
       "before": [","],

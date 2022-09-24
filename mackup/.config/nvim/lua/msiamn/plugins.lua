@@ -66,4 +66,25 @@ packer.startup(function(use)
   use 'dart-lang/dart-vim-plugin'
   use 'Pocco81/auto-save.nvim'
   -- use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+  use({
+    'mfussenegger/nvim-dap',
+    config = function()
+      require('dap').adapters.dart = {
+        type = "executable",
+        command = "node",
+        args = { os.getenv('HOME') .. "/Tools/Dart-Code/out/dist/debug.js", "flutter" }
+      }
+      require('dap').configurations.dart = {
+        {
+          type = "dart",
+          request = "launch",
+          name = "Launch flutter",
+          dartSdkPath = os.getenv('HOME') .. "/Tools/flutter/bin/cache/dart-sdk/",
+          flutterSdkPath = os.getenv('HOME') .. "/Tools/flutter",
+          program = "${workspaceFolder}/lib/main.dart",
+          cwd = "${workspaceFolder}",
+        }
+      }
+    end
+  })
 end)
