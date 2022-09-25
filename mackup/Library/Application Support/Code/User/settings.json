@@ -33,7 +33,7 @@
       // "editor.background": "#000000"
     },
     "[Solarized Dark]": {
-      // "editor.background": "#000000"
+      "editor.background": "#111111"
     }
   },
   "vim.handleKeys": {
@@ -201,6 +201,5 @@
   "fzf-quick-open.ripgrepSearchStyle": "Ignore case",
   "dart.warnWhenEditingFilesInPubCache": false,
   "workbench.activityBar.visible": false,
-  "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "Solarized Dark"
+  "workbench.editor.showTabs": false
 }
