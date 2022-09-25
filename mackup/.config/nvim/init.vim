@@ -3,19 +3,19 @@ call plug#begin()
 source $HOME/.config/nvim/nvim-config/plugins.vim
 call plug#end()
 
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/general.vim
+source $HOME/.config/nvim/nvim-config/general.vim
 
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/init.lua
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/lualine.lua
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/nvim-treesitter.lua
+source $HOME/.config/nvim/nvim-config/init.lua
+source $HOME/.config/nvim/nvim-config/lualine.lua
+source $HOME/.config/nvim/nvim-config/nvim-treesitter.lua
 
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/abbreviations.vim
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/coc.vim
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/goyo.vim
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/vim-test.vim
+source $HOME/.config/nvim/nvim-config/abbreviations.vim
+source $HOME/.config/nvim/nvim-config/coc.vim
+source $HOME/.config/nvim/nvim-config/goyo.vim
+source $HOME/.config/nvim/nvim-config/vim-test.vim
 
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/leader.vim
-source $HOME/dotfiles/mackup/.config/nvim/nvim-config/theme.vim
+source $HOME/.config/nvim/nvim-config/leader.vim
+source $HOME/.config/nvim/nvim-config/theme.vim
 
 " Miscellaneous
 let g:python3_host_prog='/opt/homebrew/bin/python3'
