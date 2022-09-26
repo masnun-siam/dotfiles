@@ -73,7 +73,6 @@ require("null-ls").setup({ sources = {} })
 
 local telescope = require('telescope')
 local actions = require('telescope.actions')
-local builtin = require("telescope.builtin")
 telescope.setup {
   defaults = {
     sorting_strategy = "ascending",
