@@ -61,6 +61,8 @@ nmap <silent>sh <c-w>h
 nmap <silent>sl <c-w>l
 nmap <silent>sd <c-w>c
 
+nmap <silent><leader>t :FloatermToggle<cr>
+
 nnoremap <leader>\ <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>bb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>; <cmd>lua require('telescope.builtin').find_files()<cr>
