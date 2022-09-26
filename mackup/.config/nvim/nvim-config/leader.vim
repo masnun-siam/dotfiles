@@ -17,12 +17,12 @@ nmap <leader>% :source %<cr>
 nmap <leader>/ :noh<cr>
 nmap <leader><leader> <Plug>(coc-fix-current)
 nmap <leader><tab> :bp<cr>
+nmap <silent><leader>a  :lua require('telescope').load_extension('coc').code_actions()<cr>
 xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>bsd :%bd\|e#\|bd#<cr>\|'"
 nmap <leader>bd :bd<cr>
 nmap <leader>en <Plug>(coc-diagnostic-next)
-nmap <leader>ee :CocList diagnostics<cr>
+nmap <silent><leader>ee  :lua require('telescope').load_extension('coc').workspace_diagnostics()<cr>
 nmap <leader>ep <Plug>(coc-diagnostic-prev)
 nmap <leader>f :Lfcd<cr>
 nmap <leader>gb <Plug>(coc-git-blame)<cr>
@@ -53,13 +53,13 @@ nmap <leader>p :bp<cr>
 nmap <leader>q :wq!<cr>
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>s :<C-u>CocList -I symbols<cr>
-nmap ss :split<cr>
-nmap sv :vsplit<cr>
-nmap sj <c-w>j
-nmap sk <c-w>k
-nmap sh <c-w>h
-nmap sl <c-w>l
-nmap sd <c-w>c
+nmap <silent>ss :split<cr>
+nmap <silent>sv :vsplit<cr>
+nmap <silent>sj <c-w>j
+nmap <silent>sk <c-w>k
+nmap <silent>sh <c-w>h
+nmap <silent>sl <c-w>l
+nmap <silent>sd <c-w>c
 
 nnoremap <leader>\ <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>bb <cmd>lua require('telescope.builtin').buffers()<cr>

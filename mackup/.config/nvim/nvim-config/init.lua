@@ -72,12 +72,21 @@ require'nvim-treesitter.configs'.setup {
 require("null-ls").setup({ sources = {} })
 
 local telescope = require('telescope')
-
+local actions = require('telescope.actions')
+local builtin = require("telescope.builtin")
 telescope.setup {
   defaults = {
     sorting_strategy = "ascending",
     prompt_prefix = " ",
-    prompt_position = "top"
+    prompt_position = "top",
+    mappings = {
+      n = {
+        ['q'] = actions.close
+      },
+      i = {
+        ['  '] = actions.close
+      }
+    }
   },
   pickers = {
     buffers = {
