@@ -3,7 +3,7 @@ Plug 'airblade/vim-rooter'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-Plug 'chrisbra/vim-autosave'
+" Plug 'chrisbra/vim-autosave'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
