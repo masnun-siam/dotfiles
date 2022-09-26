@@ -12,7 +12,6 @@ Plug 'felippepuhle/coc-graphql', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/coc-flutter', {'do': 'yarn install --frozen-lockfile'}
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/trouble.nvim'
-Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'iamcco/coc-spell-checker', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
