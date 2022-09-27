@@ -1,5 +1,6 @@
 {
   // "git.enableGutters": false,
+  // "session.saveOnVimLeave": false,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
@@ -16,7 +17,7 @@
     "markdown",
     "mdx",
     "graphql",
-    "json",
+    // "json",
     "javascript",
     "javascriptreact",
     "typescript",

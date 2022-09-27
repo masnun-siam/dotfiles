@@ -13,6 +13,7 @@ nnoremap <silent><leader>7 :lua require("harpoon.ui").nav_file(7)<CR>
 nnoremap <silent><leader>8 :lua require("harpoon.ui").nav_file(8)<CR>
 nnoremap <silent><leader>9 :lua require("harpoon.ui").nav_file(9)<CR>
 
+nmap <silent><leader>F :Format<CR>
 nmap <leader>% :source %<cr>
 nmap <leader>/ :noh<cr>
 nmap <leader><leader> <Plug>(coc-fix-current)
