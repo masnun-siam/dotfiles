@@ -38,21 +38,47 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
+     (auto-completion
+      :variables
+      auto-completion-return-key-behavior 'complete
+      auto-completion-enable-help-tooltip t
+      auto-completion-tab-key-behavior 'cycle
+      auto-completion-with-key-sequence nil
+      )
+     better-defaults
      emacs-lisp
-     ;; git
-     helm
-     ;; lsp
-     ;; markdown
-     multiple-cursors
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     git
+     ;; helm
+     (multiple-cursors :variables
+                       multiple-cursors-backend 'mc)
+     csv
+     (dart :variables
+           dart-server-sdk-path "~/Tools/flutter/bin/cache/dart-sdk/"
+           dart-server-format-on-save t)
+     sql
+     ivy
+     groovy
+     kotlin
+     html
+     (lsp :variables
+          lsp-navigation 'peek
+          lsp-ui-doc-enable nil
+          lsp-ui-sideline-enable t)
+     markdown
+     org
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     themes-megapack
+     (syntax-checking :variables
+                      syntax-checking-enable-by-default t
+                      syntax-checking-use-original-bitmaps t
+                      syntax-checking-enable-tooltips nil)
+
      ;; spell-checking
-     ;; syntax-checking
      ;; version-control
+     vimscript
+     yaml
      treemacs)
 
 
@@ -64,13 +90,19 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      all-the-icons
+                                      all-the-icons-dired
+                                      flutter
+                                      flutter-l10n-flycheck
+                                      yasnippet-snippets
+                                      humanoid-themes)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(fill-column-indicator)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -178,7 +210,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner '000
 
    ;; Scale factor controls the scaling (size) of the startup banner. Default
    ;; value is `auto' for scaling the logo automatically to fit all buffer
@@ -198,7 +230,7 @@ It should only modify the values of Spacemacs settings."
    ;; number is the project limit and the second the limit on the recent files
    ;; within a project.
    dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+                                (projects . 5))
 
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
@@ -237,8 +269,12 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(
+                         dracula
+                         kaolin-valley-light
+                         material-light
+                         kaolin-bubblegum
+                         kaolin-galaxy)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -360,12 +396,12 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
    ;; borderless fullscreen. (default nil)
-   dotspacemacs-undecorated-at-startup nil
+   dotspacemacs-undecorated-at-startup t
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
@@ -415,7 +451,7 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
@@ -433,7 +469,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc...
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
-   dotspacemacs-smart-closing-parenthesis nil
+   dotspacemacs-smart-closing-parenthesis t
 
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
@@ -496,7 +532,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
 
    ;; If non-nil activate `clean-aindent-mode' which tries to correct
    ;; virtual indentation of simple modes. This can interfere with mode specific
@@ -538,7 +574,7 @@ default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
   (spacemacs/load-spacemacs-env)
-)
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -546,7 +582,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-)
+  )
 
 
 (defun dotspacemacs/user-load ()
@@ -554,7 +590,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
-)
+  )
 
 
 (defun dotspacemacs/user-config ()
@@ -563,7 +599,50 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-)
+
+  (setq dart-server-enable-analysis-server t)
+
+  (with-eval-after-load "projectile"
+    (add-to-list 'projectile-project-root-files-bottom-up "pubspec.yaml")
+    (add-to-list 'projectile-project-root-files-bottom-up "BUILD"))
+
+  (setq lsp-auto-guess-root t)
+  ;; Smartparens configuration and global mode enable
+  (smartparens-global-mode)
+
+  ;; Paredit bindings for smartparens
+  (sp-use-paredit-bindings)
+
+  ;; Always follow symlinks
+  (setq vc-follow-symlinks t)
+  ;; Add web-mode for svg files
+  (add-to-list 'auto-mode-alist '("\\.svg\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.xml\\'" . web-mode))
+  (use-package flutter-l10n-flycheck
+    :after flutter
+    :config
+    (flutter-l10n-flycheck-setup))
+  (defun project-try-dart (dir)
+    (let ((project (or (locate-dominating-file dir "pubspec.yaml")
+                       (locate-dominating-file dir "BUILD"))))
+      (if project
+          (cons 'dart project)
+        (cons 'transient dir))))
+  (add-hook 'project-find-functions #'project-try-dart)
+  (cl-defmethod project-roots ((project (head dart)))
+    (list (cdr project)))
+
+  ;; Separator of powerline
+  (setq powerline-default-separator 'slant)
+  (spaceline-compile)
+
+  ;; Username for emacs session
+  (setq user-full-name "Masnun Siam")
+  (setq user-mail-address "masnunsiam@duck.com")
+
+  )
+
+
 
 
 ;; Do not write anything past this comment. This is where Emacs will

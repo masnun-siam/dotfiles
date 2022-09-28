@@ -5,9 +5,9 @@ live_config_reload: true
 env:
   TERM: xterm-256color
 
-# import:
-#   # - ~/.config/alacritty/aw/current.yml
-#   - 'dracula.yml'
+import:
+  # - ~/.config/alacritty/aw/current.yml
+  - 'dracula.yml'
 
 shell:
   program: /opt/homebrew/bin/fish
@@ -480,7 +480,7 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-colors: *SolarizedDark
+# colors: *Dracula
 
 key_bindings:
   - { key: Comma, mods: Command, chars: "\x02," }
