@@ -100,6 +100,7 @@ SETUVAR _fish_abbr_sai:SwitchAudioSource\x20\x2dt\x20input\x20\x2ds\x20\x28Switc
 SETUVAR _fish_abbr_sao:SwitchAudioSource\x20\x2dt\x20output\x20\x2ds\x20\x28SwitchAudioSource\x20\x2dt\x20output\x20\x2da\x20\x7c\x20fzf\x2dtmux\x20\x2dp\x20\x2d\x2dreverse\x29
 SETUVAR _fish_abbr_sb:sam\x20build
 SETUVAR _fish_abbr_sf:source\x20\x7e/\x2econfig/fish/config\x2efish
+SETUVAR _fish_abbr_spoonupdate:cd\x20\x7e/\x2ehammerspoon/Spoons/VimMode\x2espoon\x20\x26\x26\x20git\x20pull
 SETUVAR _fish_abbr_st:tmux\x20source\x20\x7e/\x2econfig/tmux/tmux\x2econf
 SETUVAR _fish_abbr_ta:tmux\x20a
 SETUVAR _fish_abbr_tad:tmux\x20attach\x20\x2dd\x20\x2dt
@@ -115,11 +116,11 @@ SETUVAR _fish_abbr_v:nvim\x20\x28fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x
 SETUVAR _fish_abbr_va:nvim\x20\x7e/\x2econfig/alacritty/alacritty\x2eyml
 SETUVAR _fish_abbr_vf:nvim\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_vp:nvim\x20package\x2ejson
-SETUVAR _fish_abbr_vpc:nvim\x20\x2bPackerClean
-SETUVAR _fish_abbr_vpi:nvim\x20\x2bPackerInstall
+SETUVAR _fish_abbr_vpc:nvim\x20\x2bPlugClean
+SETUVAR _fish_abbr_vpi:nvim\x20\x2bPlugInstall
 SETUVAR _fish_abbr_vps:nvim\x20\x2bPackerSync
-SETUVAR _fish_abbr_vpu:nvim\x20\x2bPackerUpdate
-SETUVAR _fish_abbr_vpug:nvim\x20\x2bPackerUpgrade
+SETUVAR _fish_abbr_vpu:nvim\x20\x2bPlugUpdate
+SETUVAR _fish_abbr_vpug:nvim\x20\x2bPlugUpgrade
 SETUVAR _fish_abbr_vt:nvim\x20\x7e/\x2econfig/tmux/tmux\x2econf
 SETUVAR _fish_abbr_y:yarn
 SETUVAR _fish_abbr_ya:yarn\x20add

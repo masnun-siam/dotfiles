@@ -35,8 +35,10 @@ alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
+
 alias g git
 alias less bat
+alias lfyt='/Users/siam/.config/lf/lf-gadgets/lf-yt/lf-yt'
 command -qv nvim && alias vim nvim
 
 set -gx PATH bin $PATH
@@ -50,6 +52,7 @@ set -gx PATH node_modules/.bin $PATH
 set -g GOPATH /usr/local/go
 fish_add_path -g $GOPATH/bin
 fish_add_path -g ~/.config/bin
+fish_add_path -g /usr/local/bin
 
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'
@@ -96,9 +99,9 @@ fish_add_path -g $HOME/Tools/flutter/.pub-cache/bin
 # doom
 alias doom "~/.emacs.d/bin/doom"
 alias ani "ani-cli -q 720"
-alias dra "dra-cla -q 720"
+alias dra "/usr/local/bin/dra-cla -q 720"
 alias anic "ani-cli -q 720 -c"
-alias drac "dra-cla -q 720 -c"
+alias drac "/usr/local/bin/dra-cla -q 720 -c"
 alias vi nvim
 
 # Set manpager
@@ -283,11 +286,11 @@ abbr u "~/.config/bin/update.sh"
 abbr v "nvim (fd --type f --hidden --follow --exclude .git | fzf-tmux -p --reverse)"
 abbr va "nvim ~/.config/alacritty/alacritty.yml"
 abbr vf "nvim ~/.config/fish/config.fish"
-abbr vpc "nvim +PackerClean"
-abbr vps "nvim +PackerSync"
-abbr vpi "nvim +PackerInstall"
-abbr vpu "nvim +PackerUpdate"
-abbr vpug "nvim +PackerUpgrade"
+abbr vpc "nvim +PlugClean"
+# abbr vps "nvim +PlugSync"
+abbr vpi "nvim +PlugInstall"
+abbr vpu "nvim +PlugUpdate"
+abbr vpug "nvim +PlugUpgrade"
 abbr vt "nvim ~/.config/tmux/tmux.conf"
 abbr fpg "flutter pub get"
 abbr fpu "flutter pub upgrade"
@@ -296,3 +299,4 @@ abbr fbb "flutter pub run build_runner build --delete-conflicting-outputs"
 abbr fbw "flutter pub run build_runner watch --delete-conflicting-outputs"
 abbr fpa "flutter pub add"
 abbr fpad "flutter pub add --dev"
+abbr spoonupdate "cd ~/.hammerspoon/Spoons/VimMode.spoon && git pull"
