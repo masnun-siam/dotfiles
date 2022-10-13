@@ -10,7 +10,10 @@ require('catppuccin').setup({
 vim.cmd[[set termguicolors]]
 vim.cmd[[syntax enable]]
 vim.cmd[[colorscheme catppuccin]]
-
+vim.cmd [[
+  set completeopt=menuone,noinsert,noselect
+  highlight! default link CmpItemKind CmpItemMenuDefault
+]]
 -- NOTE: https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt
 -- NOTE: https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/core/color_palette.lua
 -- vim.cmd[[hi CocErrorHighlight guifg=#F28FAD]]

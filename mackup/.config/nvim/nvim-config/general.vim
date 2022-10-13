@@ -40,8 +40,8 @@ set noswapfile
 set expandtab
 set smarttab
 set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+" set softtabstop=2
+" set tabstop=2
 
 " set rtp+=/usr/local/opt/fzf
 set rtp+=/opt/homebrew/bin/fzf

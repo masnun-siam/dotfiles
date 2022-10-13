@@ -53,6 +53,7 @@ set -g GOPATH /usr/local/go
 fish_add_path -g $GOPATH/bin
 fish_add_path -g ~/.config/bin
 fish_add_path -g /usr/local/bin
+fish_add_path -g ~/.pub-cache/bin
 
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'
@@ -98,10 +99,10 @@ fish_add_path -g $HOME/Tools/flutter/.pub-cache/bin
 
 # doom
 alias doom "~/.emacs.d/bin/doom"
-alias ani "ani-cli -q 720"
-alias dra "/usr/local/bin/dra-cla -q 720"
+alias ani "ani-cli"
+alias dra "/usr/local/bin/dra-cla"
 alias anic "ani-cli -q 720 -c"
-alias drac "/usr/local/bin/dra-cla -q 720 -c"
+alias drac "/usr/local/bin/dra-cla -c"
 alias vi nvim
 
 # Set manpager
@@ -212,6 +213,7 @@ set -U fish_color_valid_path green
 
 
 # abbreviations
+abbr q "exit"
 abbr :bd "exit"
 abbr :q "tmux kill-server"
 abbr ast "aw set -t (aw list | fzf-tmux -p --reverse --preview 'aw set -t {}')"

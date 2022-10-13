@@ -9,7 +9,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'felippepuhle/coc-graphql', {'do': 'yarn install --frozen-lockfile'}
-Plug 'iamcco/coc-flutter', {'do': 'yarn install --frozen-lockfile'}
+Plug 'theniceboy/coc-flutter-tools', {'do': 'yarn install --frozen-lockfile'}
+Plug 'Nash0x7E2/awesome-flutter-snippets'
 Plug 'folke/todo-comments.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
@@ -44,6 +45,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'numToStr/Comment.nvim'
 Plug 'nvim-lua/plenary.nvim'
+" Plug 'SirVer/ultisnips'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'nvim-telescope/telescope.nvim'

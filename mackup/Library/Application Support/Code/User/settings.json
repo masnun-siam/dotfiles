@@ -20,6 +20,7 @@
   "vim.hlsearch": true,
   "vim.foldfix": true,
   "vim.incsearch": true,
+  "vim.leader": " ",
   "editor.cursorBlinking": "solid",
   "editor.smoothScrolling": true,
   "editor.renderLineHighlight": "gutter",
@@ -48,8 +49,8 @@
   
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>"],
-      "commands": ["vspacecode.space"]
+      "before": ["<space>", ";"],
+      "commands": [""]
     },
     {
       "before": [","],
@@ -62,46 +63,40 @@
       ]
     },
     {
-      "before": [";", "a"],
+      "before": ["<leader>", "a"],
       "commands": ["keyboard-quickfix.openQuickFix"]
     },
     {
-      "before": [";", "f"],
+      "before": ["<leader>", ";"],
       "commands": ["workbench.action.quickOpen"]
     },
     {
-      "before": [";", "r"],
-      "commands": ["fzf-quick-open.runFzfSearchPwd"],
-      "args": ""
+      "before": ["<leader>", "f"],
+      "commands": ["file-browser.open"]
     },
     {
-      "before": ["s", "f"],
-      "commands": ["file-browser.open"]
+      "before": [";", "r"],
+      "commands": ["workbench.action.showAllSymbols"],
+      "args": ""
     },
     {
       "before": [";", "F"],
       "commands": ["Format Buffer"]
     },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["extension.jumpy-word"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["extension.jumpy-line"]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>"],
-      "commands": ["vspacecode.space"]
-    },
-    {
-      "before": [";", "a"],
+      "before": ["<leader>", "a"],
       "commands": ["keyboard-quickfix.openQuickFix"]
     },
-    {
-      "before": [","],
-      "commands": [
-        "vspacecode.space",
-        {
-          "command": "whichkey.triggerKey",
-          "args": "m"
-        }
-      ]
-    }
   ],
   "dart.runPubGetOnPubspecChanges": "prompt",
   "files.autoSave": "afterDelay",
@@ -200,6 +195,6 @@
   "breadcrumbs.enabled": false,
   "fzf-quick-open.ripgrepSearchStyle": "Ignore case",
   "dart.warnWhenEditingFilesInPubCache": false,
+  "window.zoomLevel": 1,
   "workbench.activityBar.visible": false,
-  "workbench.editor.showTabs": false
 }

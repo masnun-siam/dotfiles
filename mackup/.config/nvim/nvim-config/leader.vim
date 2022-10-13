@@ -43,17 +43,18 @@ nmap <leader>gu :CocCommand git.chunkUndo<cr>
 nmap <leader>gU :CocCommand git.chunkUnstage<cr>
 nmap <leader>gy :CocCommand git.copyUrl<cr><cr>
 nmap <leader>gz :CocCommand git.foldUnchanged<cr>
-nmap <leader>h :HopWord<cr>
+nmap <silent><leader>h :HopWord<cr>
 nmap <leader>j :<C-u>CocNext<CR>
 nmap <leader>k :<C-u>CocPrev<CR>
-nmap <leader>l :HopLine<cr>
+nmap <silent><leader>l :HopLine<cr>
 nmap <leader>m :MaximizerToggle!<cr>
 nmap <leader>n :bn<cr>
-nmap <leader>o :<C-u>CocList outline<cr>
+nmap <leader>o :<C-u>CocCommand flutter.toggleOutline<cr>
 nmap <leader>p :bp<cr>
 nmap <leader>q :wq!<cr>
 nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>s :<C-u>CocList -I symbols<cr>
+" nmap <leader>s :<C-u>CocList -I symbols<cr>
+nmap <silent><leader>s :HopChar1<cr>
 nmap <silent>ss :split<cr>
 nmap <silent>sv :vsplit<cr>
 nmap <silent>sj <c-w>j

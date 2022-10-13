@@ -94,6 +94,7 @@ SETUVAR _fish_abbr_os:overmind\x20start
 SETUVAR _fish_abbr_pb:pnpm\x20build
 SETUVAR _fish_abbr_pd:pnpm\x20dev
 SETUVAR _fish_abbr_pi:pnpm\x20install
+SETUVAR _fish_abbr_q:exit
 SETUVAR _fish_abbr_rmr:rm\x20\x2drf
 SETUVAR _fish_abbr_sa:SwitchAudioSource\x20\x2dt\x20output\x20\x2ds\x20\x28SwitchAudioSource\x20\x2dt\x20output\x20\x2da\x20\x7c\x20fzf\x2dtmux\x20\x2dp\x20\x2d\x2dreverse\x29
 SETUVAR _fish_abbr_sai:SwitchAudioSource\x20\x2dt\x20input\x20\x2ds\x20\x28SwitchAudioSource\x20\x2dt\x20input\x20\x2da\x20\x7c\x20fzf\x2dtmux\x20\x2dp\x20\x2d\x2dreverse\x29

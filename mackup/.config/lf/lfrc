@@ -92,6 +92,7 @@ cmd restore_trash ${{
 map d
 map t
 map dd trash
+map dc cut
 map tt restore_trash
 map <delete> trash
 # map <delete> delete

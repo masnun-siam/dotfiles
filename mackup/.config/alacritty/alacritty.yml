@@ -5,8 +5,8 @@ live_config_reload: true
 env:
   TERM: xterm-256color
 
-# import:
-#   - 'dracula.yml'
+import:
+  - 'dracula.yml'
 
 shell:
   program: /opt/homebrew/bin/fish
@@ -479,7 +479,7 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-# colors: *Dracula
+# colors: *MonokaiPro
 
 key_bindings:
   - { key: Comma, mods: Command, chars: "\x02," }
