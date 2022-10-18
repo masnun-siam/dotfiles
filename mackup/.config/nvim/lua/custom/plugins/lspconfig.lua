@@ -13,3 +13,5 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+

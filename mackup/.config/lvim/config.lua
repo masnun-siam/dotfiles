@@ -48,6 +48,7 @@ lvim.builtin.telescope.defaults.mappings = {
   },
   --   -- for normal mode
   n = {
+    ["q"] = actions.close,
     ["<C-j>"] = actions.move_selection_next,
     ["<C-k>"] = actions.move_selection_previous,
   },
@@ -55,6 +56,13 @@ lvim.builtin.telescope.defaults.mappings = {
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+
+lvim.builtin.which_key.mappings["j"] = {
+  name = "+Jump",
+  j = { "<cmd>:HopChar1<cr>", "Jump Character" },
+  l = { "<cmd>:HopLine<cr>", "Jump Line" },
+  h = { "<cmd>:HopWord<cr>", "Jump Word" },
+}
 
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
@@ -206,9 +214,16 @@ lvim.plugins = {
     "folke/trouble.nvim",
     -- cmd = "TroubleToggle",
   },
-  { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' },
+  { 'masnun-siam/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' },
   { 'tpope/vim-surround' },
-  { 'glepnir/lspsaga.nvim' }
+  { 'glepnir/lspsaga.nvim' },
+  { 'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
 }
 
 require("flutter-tools").setup {

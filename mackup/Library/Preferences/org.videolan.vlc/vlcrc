@@ -214,7 +214,7 @@
 #macosx-control-itunes=1
 
 # Continue playback where you left off (integer)
-#macosx-continue-playback=0
+macosx-continue-playback=1
 
 # Control playback with the Apple Remote (boolean)
 #macosx-appleremote=1
@@ -4029,7 +4029,7 @@ metadata-network-access=1
 #global-key-toggle-fullscreen=
 
 # Fullscreen (string)
-#key-toggle-fullscreen=Command+f
+key-toggle-fullscreen=Command-f
 
 # Exit fullscreen (string)
 #global-key-leave-fullscreen=
@@ -4077,31 +4077,31 @@ metadata-network-access=1
 #global-key-rate-faster-fine=
 
 # Faster (fine) (string)
-#key-rate-faster-fine=
+key-rate-faster-fine=]
 
 # Slower (fine) (string)
 #global-key-rate-slower-fine=
 
 # Slower (fine) (string)
-#key-rate-slower-fine=
+key-rate-slower-fine=[
 
 # Next (string)
 #global-key-next=
 
 # Next (string)
-#key-next=Command+Right
+key-next=n
 
 # Previous (string)
 #global-key-prev=
 
 # Previous (string)
-#key-prev=Command+Left
+key-prev=p
 
 # Stop (string)
 #global-key-stop=
 
 # Stop (string)
-#key-stop=Command+.
+key-stop=x
 
 # Position (string)
 #global-key-position=
@@ -4125,13 +4125,13 @@ metadata-network-access=1
 #global-key-jump-short=
 
 # Short backwards jump (string)
-#key-jump-short=Command+Alt+Left
+key-jump-short=Left
 
 # Short forward jump (string)
 #global-key-jump+short=
 
 # Short forward jump (string)
-#key-jump+short=Command+Alt+Right
+key-jump+short=Right
 
 # Medium backwards jump (string)
 #global-key-jump-medium=
@@ -4173,25 +4173,25 @@ metadata-network-access=1
 #global-key-nav-up=
 
 # Navigate up (string)
-#key-nav-up=Up
+key-nav-up=
 
 # Navigate down (string)
 #global-key-nav-down=
 
 # Navigate down (string)
-#key-nav-down=Down
+key-nav-down=
 
 # Navigate left (string)
 #global-key-nav-left=
 
 # Navigate left (string)
-#key-nav-left=Left
+key-nav-left=
 
 # Navigate right (string)
 #global-key-nav-right=
 
 # Navigate right (string)
-#key-nav-right=Right
+key-nav-right=
 
 # Go to the DVD menu (string)
 #global-key-disc-menu=
@@ -4227,19 +4227,19 @@ metadata-network-access=1
 #global-key-quit=
 
 # Quit (string)
-#key-quit=Command+q
+key-quit=q
 
 # Volume up (string)
 #global-key-vol-up=
 
 # Volume up (string)
-#key-vol-up=Command+Up
+key-vol-up=Up
 
 # Volume down (string)
 #global-key-vol-down=
 
 # Volume down (string)
-#key-vol-down=Command+Down
+key-vol-down=Down
 
 # Mute (string)
 #global-key-vol-mute=
@@ -4305,7 +4305,7 @@ metadata-network-access=1
 #global-key-audiodelay-down=
 
 # Audio delay down (string)
-#key-audiodelay-down=f
+key-audiodelay-down=
 
 # Cycle audio track (string)
 #global-key-audio-track=
@@ -4341,7 +4341,7 @@ metadata-network-access=1
 #global-key-program-sid-next=
 
 # Cycle next program Service ID (string)
-#key-program-sid-next=x
+key-program-sid-next=
 
 # Cycle previous program Service ID (string)
 #global-key-program-sid-prev=

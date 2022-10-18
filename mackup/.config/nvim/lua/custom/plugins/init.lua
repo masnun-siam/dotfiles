@@ -42,15 +42,10 @@ return {
   },
 
   -- Flutter
-  ["akinsho/flutter-tools.nvim"] = {
+  ["masnun-siam/flutter-tools.nvim"] = {
     requires = "nvim-lua/plenary.nvim",
     config = function()
       require("flutter-tools").setup {
-        lsp = {
-          cmd = {
-            'dart', 'language-server', '--lsp',
-          }
-        },
         widget_guides = {
           enabled = true,
         }
@@ -67,8 +62,9 @@ return {
       -- you can configure Hop the way you like here; see :h hop-config
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
-  }
+  },
 
+  ['tpope/vim-surround'] = {}
   -- remove plugin
   -- ["hrsh7th/cmp-path"] = false,
 }

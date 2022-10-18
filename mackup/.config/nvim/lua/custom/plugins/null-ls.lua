@@ -22,6 +22,9 @@ local sources = {
   -- cpp
   b.formatting.clang_format,
   b.formatting.rustfmt,
+
+  -- dart
+  b.formatting.dart_format,
 }
 
 null_ls.setup {
