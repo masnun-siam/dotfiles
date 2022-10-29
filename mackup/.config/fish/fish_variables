@@ -84,6 +84,15 @@ SETUVAR _fish_abbr_ld:lazydocker
 SETUVAR _fish_abbr_lg:lazygit
 SETUVAR _fish_abbr_ll:lsd\x20\x20\x2d\x2dgroup\x2ddirs\x20first\x20\x2dAl
 SETUVAR _fish_abbr_lt:lsd\x20\x20\x2d\x2dgroup\x2ddirs\x20last\x20\x2dA\x20\x2d\x2dtree
+SETUVAR _fish_abbr_lv:lvim\x20\x28fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x7c\x20fzf\x2dtmux\x20\x2dp\x20\x2d\x2dreverse\x29
+SETUVAR _fish_abbr_lva:lvim\x20\x7e/\x2econfig/alacritty/alacritty\x2eyml
+SETUVAR _fish_abbr_lvf:lvim\x20\x7e/\x2econfig/fish/config\x2efish
+SETUVAR _fish_abbr_lvpc:lvim\x20\x2bPackerClean
+SETUVAR _fish_abbr_lvpi:lvim\x20\x2bPackerInstall
+SETUVAR _fish_abbr_lvps:lvim\x20\x2bPackerSync
+SETUVAR _fish_abbr_lvpu:lvim\x20\x2bPackerUpdate
+SETUVAR _fish_abbr_lvpug:lvim\x20\x2bPackerUpgrade
+SETUVAR _fish_abbr_lvt:lvim\x20\x7e/\x2econfig/tmux/tmux\x2econf
 SETUVAR _fish_abbr_nb:npm\x20run\x20build
 SETUVAR _fish_abbr_nd:npm\x20run\x20dev
 SETUVAR _fish_abbr_nf:neofetch

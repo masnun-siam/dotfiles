@@ -5,8 +5,8 @@ live_config_reload: true
 env:
   TERM: xterm-256color
 
-import:
-  - 'dracula.yml'
+# import:
+#   - 'dracula.yml'
 
 shell:
   program: /opt/homebrew/bin/fish
@@ -364,7 +364,7 @@ schemes:
     # Default colors
     primary:
       # background: '#002b36' # base03
-      background: '#1d1f21'
+      background: '#282c33'
       foreground: '#839496' # base0
 
     # Cursor colors
@@ -478,7 +478,7 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-# colors: *MonokaiPro
+# colors: *DoomOne
 
 key_bindings:
   - { key: Comma, mods: Command, chars: "\x02," }

@@ -13,17 +13,11 @@ return {
 	},
 
 	["nvim-telescope/telescope.nvim"] = {
-		-- config = function()
-		--   require "plugins.configs.telescope"
-		--   -- require "custom.plugins.telescope"
-		-- end,
-		extensions_list = {
-			"themes",
-			"terms",
-			"file_browser",
-			"flutter",
-		},
+		override_options = overrides.telescope,
+		module = "telescope",
+		cmd = "Telescope",
 	},
+
 	-- overrde plugin configs
 	["nvim-treesitter/nvim-treesitter"] = {
 		override_options = overrides.treesitter,
@@ -51,33 +45,12 @@ return {
 			require("custom.plugins.null-ls")
 		end,
 	},
-	-- {
-	--   after = "nvim-lspconfig",
-	--   config = function()
-	--     require "custom.plugins.null-ls"
-	--   end,
-	-- },
 
 	-- Flutter
-	["masnun-siam/flutter-tools.nvim"] = {
+	["akinsho/flutter-tools.nvim"] = {
 		requires = "nvim-lua/plenary.nvim",
-		config = function()
-			local on_attach = require("plugins.configs.lspconfig").on_attach
-			local capabilities = require("plugins.configs.lspconfig").capabilities
-			require("flutter-tools").setup({
-				lsp = {
-					on_attach = on_attach,
-					capabilities = capabilities,
-				},
-				widget_guides = {
-					enabled = true,
-				},
-				debugger = {
-					register_configurations = function()
-						require("custom.plugins.nvim-dap")
-					end,
-				},
-			})
+		options = function()
+			require("flutter-tools").setup(overrides.flutter)
 		end,
 	},
 
@@ -105,16 +78,23 @@ return {
 			require("dapui").setup({})
 		end,
 	},
-	["ptzz/lf.vim"] = {},
-
-	["voldikss/vim-floaterm"] = {},
 
 	["nvim-telescope/telescope-file-browser.nvim"] = {},
 
-	["rafamadriz/friendly-snippets"] = false,
+	-- ["rafamadriz/friendly-snippets"] = false,
 
 	["Nash0x7E2/awesome-flutter-snippets"] = {},
 	-- remove plugin
 	-- ["hrsh7th/cmp-path"] = false,
-	-- ["hrsh7th/cmp-path"] = false,
+	-- ["hrsh7th/cmp-path"] = {},
+	["hrsh7th/nvim-cmp"] = {
+		override_options = overrides.cmp,
+	},
+
+	-- ["williamboman/nvim-lsp-installer"] = {
+	-- 	-- after = "neovim/nvim-lspconfig",
+	-- 	-- config = function()
+	-- 	-- 	require("nvim-lsp-installer").setup({})
+	-- 	-- end,
+	-- },
 }

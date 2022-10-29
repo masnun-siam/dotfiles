@@ -232,6 +232,8 @@ require("flutter-tools").setup {
   }
 } -- use defaults
 
+require("telescope").load_extension("flutter")
+
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
