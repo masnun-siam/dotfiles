@@ -44,15 +44,28 @@ M.nvimtree = {
 	},
 }
 
-M.cmp = {
-	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "nvim_lua" },
-		{ name = "path" },
-	},
-}
+M.cmp = function()
+	local cmp = require("cmp")
+	return {
+		-- confirm_opts = {
+		-- 	select = true,
+		-- },
+		mapping = {
+			["<C-d>"] = cmp.mapping.scroll_docs(-4),
+			["<C-f>"] = cmp.mapping.scroll_docs(4),
+			["<C-Space>"] = cmp.mapping.complete(),
+			["<C-e>"] = cmp.mapping.close(),
+			["<CR>"] = cmp.mapping.confirm({ select = true }),
+		},
+		sources = {
+			{ name = "nvim_lsp" },
+			{ name = "luasnip" },
+			{ name = "buffer" },
+			{ name = "nvim_lua" },
+			{ name = "path" },
+		},
+	}
+end
 
 M.telescope = function()
 	vim.g.theme_switcher_loaded = true
@@ -155,8 +168,8 @@ M.flutter = function()
 	local capabilities = require("plugins.configs.lspconfig").capabilities
 
 	return {
+		cmd = { "/Users/siam/Tools/flutter/bin/cache/dart-sdk/bin/dart", "language-server", "--lsp" },
 		lsp = {
-			cmd = { "/Users/siam/Tools/flutter/bin/cache/dart-sdk/bin/dart", "language-server", "--lsp" },
 			on_attach = on_attach,
 			capabilities = capabilities,
 		},

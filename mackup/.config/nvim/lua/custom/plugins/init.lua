@@ -97,4 +97,5 @@ return {
 	-- 	-- 	require("nvim-lsp-installer").setup({})
 	-- 	-- end,
 	-- },
+	["RobertBrunhage/flutter-riverpod-snippets"] = {},
 }

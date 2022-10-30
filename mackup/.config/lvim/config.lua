@@ -131,7 +131,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
-
+lvim.builtin.cmp.confirm_opts.select = true
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
