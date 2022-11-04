@@ -55,6 +55,8 @@ fish_add_path -g ~/.config/bin
 fish_add_path -g /usr/local/bin
 fish_add_path -g ~/.pub-cache/bin
 
+set -gx CHROME_EXECUTABLE "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'
     status --is-command-substitution; and return

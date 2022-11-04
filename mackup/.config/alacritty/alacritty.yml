@@ -33,9 +33,9 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    # family: Source Code Pro
+    # family: SauceCodePro Nerd Font
     # family: CodeNewRoman Nerd Font
-    family: SFMono Nerd Font
+    # family: SFMono Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
     # family: JetBrains Mono
@@ -43,7 +43,7 @@ font:
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
-    # family: FiraCode Nerd Font
+    family: FiraCode Nerd Font
     # family: BlexMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
@@ -55,17 +55,17 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: Source Code Pro
+    # family: SauceCodePro Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
     # family: JetBrains Mono
-    family: SFMono Nerd Font
+    # family: SFMono Nerd Font
     # family: Hack Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
-    # family: FiraCode Nerd Font
+    family: FiraCode Nerd Font
     # family: BlexMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
@@ -77,17 +77,17 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: Source Code Pro
+    # family: SauceCodePro Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
     # family: JetBrains Mono
-    family: SFMono Nerd Font
+    # family: SFMono Nerd Font
     # family: Hack Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
-    # family: FiraCode Nerd Font
+    family: FiraCode Nerd Font
     # family: BlexMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
@@ -99,14 +99,14 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: Source Code Pro
+    # family: SauceCodePro Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    # family: FiraCode Nerd Font
+    family: FiraCode Nerd Font
     # family: BlexMono Nerd Font
     # family: Hack
     # family: JetBrains Mono
-    family: SFMono Nerd Font
+    # family: SFMono Nerd Font
     # family: Hack Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
@@ -114,7 +114,7 @@ font:
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
-  size: 21
+  size: 22
 
 draw_bold_text_with_bright_colors: true
 
