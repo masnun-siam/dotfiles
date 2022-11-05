@@ -25,6 +25,9 @@ local sources = {
 
 	-- dart
 	-- b.formatting.dart_format,
+	--
+	--solidity
+	-- b.diagnostics.solhint,
 }
 
 null_ls.setup({
