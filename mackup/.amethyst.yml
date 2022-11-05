@@ -1,21 +1,21 @@
 # Use tall and fullscreen layouts
 layouts:
-  - bsp
+  - column
   - fullscreen
-  - floating
-  # - column
+  - row
+  # - wide
+  # - floating
   # - tall
   # - tall-right
-  # - wide
   # - two-pane
   # - 3column-left
   # - middle-wide
   # - 3column-right
   # - 4column-left
   # - 4column-right
-  # - row
   # - widescreen-tall
   # - widescreen-tall-right
+  # - bsp
 
 # Add "command" to the default mods
 mod1:
