@@ -15,6 +15,7 @@ M.general = {
 		-- [";"] = { ":", "command mode", opts = { nowait = true } },
 		["K"] = { ":lua vim.lsp.buf.hover()<cr>", "vim lsp hover", opts = opts },
 		["gd"] = { ":lua vim.lsp.buf.definition()<cr>", "vim lsp definition", opts = opts },
+		["gr"] = { ":Telescope lsp_references<cr>", "telescope lsp references", opts = opts },
 		["<leader>F"] = { ":lua vim.lsp.buf.format()<cr>", "vim lsp format", opts = opts },
 		["gl"] = { ":Lspsaga lsp_finder<cr>", "vim lsp references", opts = opts },
 		["gh"] = { ":Lspsaga show_line_diagnostics<cr>", "vim lsp line diagnostics", opts = opts },

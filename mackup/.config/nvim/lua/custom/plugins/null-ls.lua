@@ -23,6 +23,12 @@ local sources = {
 	b.formatting.clang_format,
 	b.formatting.rustfmt,
 
+	-- yaml
+	b.formatting.yamlfmt,
+
+	-- json
+	b.formatting.jq,
+
 	-- dart
 	-- b.formatting.dart_format,
 	--

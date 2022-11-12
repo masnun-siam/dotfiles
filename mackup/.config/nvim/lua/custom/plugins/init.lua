@@ -47,7 +47,7 @@ return {
 	},
 
 	-- Flutter
-	["akinsho/flutter-tools.nvim"] = {
+	["masnun-siam/flutter-tools.nvim"] = {
 		requires = "nvim-lua/plenary.nvim",
 		options = function()
 			require("flutter-tools").setup(overrides.flutter)

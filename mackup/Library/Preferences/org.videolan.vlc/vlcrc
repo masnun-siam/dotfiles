@@ -1838,7 +1838,7 @@ macosx-continue-playback=1
 [auhal] # HAL AudioUnit output
 
 # Audio volume (integer)
-#auhal-volume=256
+auhal-volume=166
 
 # Last audio device (string)
 auhal-audio-device=0
@@ -3657,7 +3657,7 @@ auhal-audio-device=0
 #vout=
 
 # Video filter module (string)
-#video-filter=
+video-filter=3d
 
 # Video splitter module (string)
 #video-splitter=

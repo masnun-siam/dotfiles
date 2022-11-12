@@ -171,7 +171,7 @@ M.flutter = function()
 	local capabilities = require("plugins.configs.lspconfig").capabilities
 
 	return {
-		cmd = { "/Users/siam/Tools/flutter/bin/cache/dart-sdk/bin/dart", "language-server", "--lsp" },
+		-- cmd = { "/Users/siam/Tools/flutter/bin/cache/dart-sdk/bin/dart", "language-server", "--lsp" },
 		lsp = {
 			on_attach = on_attach,
 			capabilities = capabilities,

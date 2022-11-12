@@ -16,7 +16,6 @@ layouts:
   # - widescreen-tall
   # - widescreen-tall-right
   # - bsp
-
 # Add "command" to the default mods
 mod1:
   - option
@@ -27,27 +26,21 @@ mod2:
   - shift
   # - control
   # - command
-
 # Modify the amethyst relaunch to use x and not z
 relaunch-amethyst:
   mod: mod2
   key: z
-
 # Enable focus-follows-mouse
 mouse-follows-focus: false
 focus-follows-mouse: false
-
 # Add 10px margin between windows
 window-margins: true
 window-margin-size: 16
-
-float-small-windows: false
+float-small-windows: true
 mouse-swaps-windows: true
 mouse-resizes-windows: true
-
-
 cycle-layout:
-  mod: mod2
+  mod: mod1
   key: space
 shrink-main:
   mod: mod1
@@ -124,3 +117,4 @@ throw-space-9:
 throw-space-10:
   mod: mod2
   key: 0
+floating: ['iina', 'mpv', 'Alfred Preferences']

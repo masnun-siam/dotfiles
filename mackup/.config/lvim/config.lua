@@ -26,8 +26,8 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.keys.normal_mode["<S-k>"] = ":lua vim.lsp.buf.hover()<CR>"
 lvim.keys.normal_mode["gd"] = ":lua vim.lsp.buf.definition()<CR>"
-lvim.keys.normal_mode["gr"] = ":lua vim.lsp.buf.references()<CR>"
-lvim.keys.normal_mode["gl"] = ":Lspsaga lsp_finder<CR>"
+lvim.keys.normal_mode["gr"] = ":Telescope lsp_references<CR>"
+-- lvim.keys.normal_mode["gl"] = ":Lspsaga lsp_finder<CR>"
 lvim.keys.normal_mode["gp"] = ":Lspsaga peek_definition<CR>"
 lvim.keys.normal_mode["<leader>a"] = ":Lspsaga code_action<CR>"
 -- unmap a default keymapping
@@ -45,6 +45,7 @@ lvim.builtin.telescope.defaults.mappings = {
     ["<C-k>"] = actions.move_selection_previous,
     ["<C-n>"] = actions.cycle_history_next,
     ["<C-p>"] = actions.cycle_history_prev,
+    -- ["  "] = actions.close,
   },
   --   -- for normal mode
   n = {
@@ -64,7 +65,7 @@ lvim.builtin.which_key.mappings["j"] = {
   h = { "<cmd>:HopWord<cr>", "Jump Word" },
 }
 
-lvim.builtin.which_key.mappings["t"] = {
+lvim.builtin.which_key.mappings["lt"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
@@ -78,7 +79,7 @@ lvim.builtin.which_key.mappings["t"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
+-- lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
