@@ -16,7 +16,7 @@ set -g theme_hide_hostname no
 set -g theme_hostname always
 
 set -U BAT_THEME Dracula 
-set -U EDITOR nvim
+set -U EDITOR lvim
 set -U FZF_CTRL_R_OPTS "--reverse --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 set -U FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -U FZF_DEFAULT_OPTS "--color=spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD"
@@ -39,7 +39,7 @@ alias l.='exa -a | egrep "^\."'
 alias g git
 alias less bat
 alias lfyt='/Users/siam/.config/lf/lf-gadgets/lf-yt/lf-yt'
-command -qv nvim && alias vim nvim
+command -qv nvim && alias vim $EDITOR
 
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
@@ -54,8 +54,6 @@ fish_add_path -g $GOPATH/bin
 fish_add_path -g ~/.config/bin
 fish_add_path -g /usr/local/bin
 fish_add_path -g ~/.pub-cache/bin
-
-set -gx CHROME_EXECUTABLE "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'
@@ -288,24 +286,24 @@ abbr td "t dotfiles"
 abbr tn "t nutiliti"
 abbr tn "tmux new -s (pwd | sed 's/.*\///g')"
 abbr u "~/.config/bin/update.sh"
-abbr v "nvim (fd --type f --hidden --follow --exclude .git | fzf-tmux -p --reverse)"
-abbr va "nvim ~/.config/alacritty/alacritty.yml"
-abbr vf "nvim ~/.config/fish/config.fish"
-abbr vpc "nvim +PackerClean"
-abbr vps "nvim +PackerSync"
-abbr vpi "nvim +PackerInstall"
-abbr vpu "nvim +PackerUpdate"
-abbr vpug "nvim +PackerUpgrade"
-abbr vt "nvim ~/.config/tmux/tmux.conf"
-abbr lv "lvim (fd --type f --hidden --follow --exclude .git | fzf-tmux -p --reverse)"
-abbr lva "lvim ~/.config/alacritty/alacritty.yml"
-abbr lvf "lvim ~/.config/fish/config.fish"
-abbr lvpc "lvim +PackerClean"
-abbr lvps "lvim +PackerSync"
-abbr lvpi "lvim +PackerInstall"
-abbr lvpu "lvim +PackerUpdate"
-abbr lvpug "lvim +PackerUpgrade"
-abbr lvt "lvim ~/.config/tmux/tmux.conf"
+abbr v "$EDITOR (fd --type f --hidden --follow --exclude .git | fzf-tmux -p --reverse)"
+abbr va "$EDITOR ~/.config/alacritty/alacritty.yml"
+abbr vf "$EDITOR ~/.config/fish/config.fish"
+abbr vpc "$EDITOR +PackerClean"
+abbr vps "$EDITOR +PackerSync"
+abbr vpi "$EDITOR +PackerInstall"
+abbr vpu "$EDITOR +PackerUpdate"
+abbr vpug "$EDITOR +PackerUpgrade"
+abbr vt "$EDITOR ~/.config/tmux/tmux.conf"
+# abbr lv "$EDITOR (fd --type f --hidden --follow --exclude .git | fzf-tmux -p --reverse)"
+# abbr lva "$EDITOR ~/.config/alacritty/alacritty.yml"
+# abbr lvf "$EDITOR ~/.config/fish/config.fish"
+# abbr lvpc "$EDITOR +PackerClean"
+# abbr lvps "$EDITOR +PackerSync"
+# abbr lvpi "$EDITOR +PackerInstall"
+# abbr lvpu "$EDITOR +PackerUpdate"
+# abbr lvpug "$EDITOR +PackerUpgrade"
+# abbr lvt "$EDITOR ~/.config/tmux/tmux.conf"
 abbr fpg "flutter pub get"
 abbr fpu "flutter pub upgrade"
 abbr fpum "flutter pub upgrade --major-versions"

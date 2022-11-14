@@ -30,12 +30,12 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "workbench.colorCustomizations": {
     "editorHoverWidget.border": "#888888",
-    "[Solarized Dark Vim]": {
-      // "editor.background": "#000000"
-    },
-    "[Solarized Dark]": {
-      "editor.background": "#111111"
-    }
+    // "[Solarized Dark Vim]": {
+    //   // "editor.background": "#000000"
+    // },
+    // "[Solarized Dark]": {
+    //   "editor.background": "#111111"
+    // }
   },
   "vim.handleKeys": {
     "<C-q>": false
@@ -223,6 +223,6 @@
   "dart.warnWhenEditingFilesInPubCache": false,
   "window.zoomLevel": 1,
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "One Dark Pro",
   "solidity.compileUsingRemoteVersion": "v0.8.10+commit.fc410830",
+  "workbench.colorTheme": "Learn with Sumit - Peace of the eye",
 }

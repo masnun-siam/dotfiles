@@ -47,11 +47,11 @@ return {
 	},
 
 	-- Flutter
-	["masnun-siam/flutter-tools.nvim"] = {
+	["akinsho/flutter-tools.nvim"] = {
 		requires = "nvim-lua/plenary.nvim",
-		options = function()
-			require("flutter-tools").setup(overrides.flutter)
-		end,
+		-- options = function()
+		-- 	require("flutter-tools").setup(overrides.flutter)
+		-- end,
 	},
 
 	-- LspSaga
@@ -67,13 +67,14 @@ return {
 
 	["tpope/vim-surround"] = {},
 
-	["mfussenegger/nvim-dap"] = {
-		config = function()
-			require("custom.plugins.nvim-dap")
-		end,
-	},
+	-- ["mfussenegger/nvim-dap"] = {
+	-- 	-- config = function()
+	-- 	-- 	require("custom.plugins.nvim-dap")
+	-- 	-- end,
+	-- },
 
 	["rcarriga/nvim-dap-ui"] = {
+		requires = "mfussenegger/nvim-dap",
 		config = function()
 			require("dapui").setup({})
 		end,

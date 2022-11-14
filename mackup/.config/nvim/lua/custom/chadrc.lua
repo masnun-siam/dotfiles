@@ -1,9 +1,9 @@
 local M = {}
 
 M.ui = {
-	theme_toggle = { "onedark", "one_light" },
+	-- theme_toggle = { "onedark", "one_light" },
 	theme = "onedark",
-	transparency = false,
+	transparency = true,
 }
 
 M.plugins = require("custom.plugins")

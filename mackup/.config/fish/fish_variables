@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR BAT_THEME:Dracula
-SETUVAR EDITOR:nvim
+SETUVAR EDITOR:lvim
 SETUVAR FZF_CTRL_R_OPTS:\x2d\x2dreverse\x20\x2d\x2dpreview\x20\x27echo\x20\x7b\x7d\x27\x20\x2d\x2dpreview\x2dwindow\x20down\x3a3\x3ahidden\x3awrap\x20\x2d\x2dbind\x20\x27\x3f\x3atoggle\x2dpreview\x27
 SETUVAR FZF_DEFAULT_COMMAND:fd\x20\x2dH\x20\x2dE\x20\x27\x2egit\x27
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dcolor\x3dspinner\x3a\x23F8BD96\x2chl\x3a\x23F28FAD\x20\x2d\x2dcolor\x3dfg\x3a\x23D9E0EE\x2cheader\x3a\x23F28FAD\x2cinfo\x3a\x23DDB6F2\x2cpointer\x3a\x23F8BD96\x20\x2d\x2dcolor\x3dmarker\x3a\x23F8BD96\x2cfg\x2b\x3a\x23F2CDCD\x2cprompt\x3a\x23DDB6F2\x2chl\x2b\x3a\x23F28FAD
@@ -122,16 +122,16 @@ SETUVAR _fish_abbr_tl:tmux\x20list\x2dsessions
 SETUVAR _fish_abbr_tn:tmux\x20new\x20\x2ds\x20\x28pwd\x20\x7c\x20sed\x20\x27s/\x2e\x2a\x5c///g\x27\x29
 SETUVAR _fish_abbr_ts:tmux\x20new\x2dsession\x20\x2ds
 SETUVAR _fish_abbr_u:\x7e/\x2econfig/bin/update\x2esh
-SETUVAR _fish_abbr_v:nvim\x20\x28fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x7c\x20fzf\x2dtmux\x20\x2dp\x20\x2d\x2dreverse\x29
-SETUVAR _fish_abbr_va:nvim\x20\x7e/\x2econfig/alacritty/alacritty\x2eyml
-SETUVAR _fish_abbr_vf:nvim\x20\x7e/\x2econfig/fish/config\x2efish
+SETUVAR _fish_abbr_v:lvim\x20\x28fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x7c\x20fzf\x2dtmux\x20\x2dp\x20\x2d\x2dreverse\x29
+SETUVAR _fish_abbr_va:lvim\x20\x7e/\x2econfig/alacritty/alacritty\x2eyml
+SETUVAR _fish_abbr_vf:lvim\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_vp:nvim\x20package\x2ejson
-SETUVAR _fish_abbr_vpc:nvim\x20\x2bPackerClean
-SETUVAR _fish_abbr_vpi:nvim\x20\x2bPackerInstall
-SETUVAR _fish_abbr_vps:nvim\x20\x2bPackerSync
-SETUVAR _fish_abbr_vpu:nvim\x20\x2bPackerUpdate
-SETUVAR _fish_abbr_vpug:nvim\x20\x2bPackerUpgrade
-SETUVAR _fish_abbr_vt:nvim\x20\x7e/\x2econfig/tmux/tmux\x2econf
+SETUVAR _fish_abbr_vpc:lvim\x20\x2bPackerClean
+SETUVAR _fish_abbr_vpi:lvim\x20\x2bPackerInstall
+SETUVAR _fish_abbr_vps:lvim\x20\x2bPackerSync
+SETUVAR _fish_abbr_vpu:lvim\x20\x2bPackerUpdate
+SETUVAR _fish_abbr_vpug:lvim\x20\x2bPackerUpgrade
+SETUVAR _fish_abbr_vt:lvim\x20\x7e/\x2econfig/tmux/tmux\x2econf
 SETUVAR _fish_abbr_y:yarn
 SETUVAR _fish_abbr_ya:yarn\x20add
 SETUVAR _fish_abbr_yad:yarn\x20add\x20\x2dD
