@@ -117,4 +117,4 @@ throw-space-9:
 throw-space-10:
   mod: mod2
   key: 0
-floating: ['com.runningwithcrayons.Alfred', 'io.mpv', 'com.apple.TextEdit', 'com.colliderli.iina', 'com.apple.systempreferences']
+floating: ['com.runningwithcrayons.Alfred', 'io.mpv', 'com.apple.TextEdit', 'com.colliderli.iina', 'com.apple.systempreferences', 'org.videolan.vlc', 'com.yourcompany.adbLink', 'com.googlecode.iterm2']

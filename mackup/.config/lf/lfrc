@@ -165,5 +165,5 @@ map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
 map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
 
 map E %nvr --remote $fx
-map f $nvim $(fzf)
+map f $lvim $(fzf)
 

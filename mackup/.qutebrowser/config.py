@@ -2,9 +2,8 @@ from qutebrowser.api import interceptor
 import os
 import subprocess
 import dracula.draw
-
 # Load existing settings made via :set
-config.load_autoconfig()
+config.load_autoconfig(False)
 
 dracula.draw.blood(c, {
     'spacing': {
@@ -12,6 +11,8 @@ dracula.draw.blood(c, {
         'horizontal': 8
     }
 })
+
+# config.source('redirect.py')
 
 # Setting Dark Mode
 config.set("colors.webpage.darkmode.enabled", True)
@@ -26,11 +27,12 @@ config.set("zoom.default", "125%")
 # Change Downloads tab position
 config.set("downloads.position","bottom")
 
-config.set("content.private_browsing", True)
+# config.set("content.private_browsing", True)
 
 config.set("fonts.default_size", '15pt')
 
-config.set("content.cookies.store", False)
+config.set("content.cookies.accept", 'all', 'chrome-devtools://*')
+config.set("content.cookies.accept", 'all', 'devtools://*')
 
 # Custom keybinds
 config.bind('M', 'hint links spawn /Applications/MacPorts/mpv.app/Contents/MacOS/mpv --force-window=immediate {hint-url}')
@@ -67,14 +69,38 @@ c.url.searchengines = {
     'cho': 'http://primary.cinehub24.com/search/{}.aspx',
     'yt': 'https://www.youtube.com/results?search_query={}'}
 
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://accounts.google.com/*')
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://docs.google.com/*')
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://drive.google.com/*')
+
+# Load images automatically in web pages.
+# Type: Bool
+config.set('content.images', True, 'chrome-devtools://*')
+
+# Load images automatically in web pages.
+# Type: Bool
+config.set('content.images', True, 'devtools://*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'chrome-devtools://*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'devtools://*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'chrome://*/*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'qute://*/*')
 # JS, cookies, encoding, headers, fonts, status-bar
 c.content.autoplay = False
-c.content.cookies.accept = "all"
 c.content.default_encoding = "utf-8"
-c.content.headers.user_agent = (
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)"
-    " Chrome/80.0.3987.163 Safari/537.36"
-)
 c.statusbar.widgets = ["keypress", "progress", "url", "scroll"]
 c.content.javascript.can_access_clipboard = True
 c.tabs.show = 'multiple'

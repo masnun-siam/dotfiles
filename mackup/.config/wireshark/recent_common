@@ -16,9 +16,9 @@ recent.display_filter: dns
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: 16
+gui.geometry_main_x: 862
 gui.geometry_main_y: 41
-gui.geometry_main_width: 1648
+gui.geometry_main_width: 802
 gui.geometry_main_height: 965
 
 # Main window maximized.

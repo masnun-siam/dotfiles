@@ -3,6 +3,8 @@
 <intLang>eng</intLang>
 <langExt>false</langExt>
 <language>eng</language>
+<os_password>MASNUN.siam.1996</os_password>
+<os_username>msiamn</os_username>
 <progressBarSize>80</progressBarSize>
 <removeTag>false</removeTag>
 <showMediaInformation>true</showMediaInformation>
@@ -29,7 +31,7 @@
  <int_dowload_sel>Download selection</int_dowload_sel>
  <int_episode>Episode (series)</int_episode>
  <int_help>Help</int_help>
- <int_help_mess>      Download subtitles from
+ <int_help_mess>Download subtitles from
       &lt;a href=&#39;http://www.opensubtitles.org/&#39;&gt;
       opensubtitles.org
       &lt;/a&gt; and display them while watching a video.&lt;br&gt;
@@ -70,7 +72,7 @@
       &lt;a href=&#39;http://addons.videolan.org&#39;&gt;addons.videolan.org&lt;/a&gt;.
       </int_help_mess>
  <int_int_lang>Interface language</int_int_lang>
- <int_no_support_mess>      &lt;strong&gt;VLSub is not working with VLC 2.1.x on
+ <int_no_support_mess>&lt;strong&gt;VLSub is not working with VLC 2.1.x on
       any platform&lt;/strong&gt;
       because the lua &quot;net&quot; module needed to interact
       with opensubtitles has been

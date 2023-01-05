@@ -39,7 +39,7 @@ alias l.='exa -a | egrep "^\."'
 alias g git
 alias less bat
 alias lfyt='/Users/siam/.config/lf/lf-gadgets/lf-yt/lf-yt'
-command -qv nvim && alias vim $EDITOR
+command -qv lvim && alias vim $EDITOR
 
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
@@ -47,6 +47,8 @@ set -gx PATH ~/.local/bin $PATH
 
 # NodeJS
 set -gx PATH node_modules/.bin $PATH
+
+set -gx CHROME_EXECUTABLE '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
 
 # Go
 set -g GOPATH /usr/local/go
@@ -100,11 +102,18 @@ fish_add_path -g $HOME/Tools/flutter/.pub-cache/bin
 # doom
 alias doom "~/.emacs.d/bin/doom"
 alias ani "ani-cli"
+alias anic "ani-cli -c"
+alias ani4 "ani-cli -q 480"
+alias ani4c "ani-cli -q 480 -c"
+alias ani7c "ani-cli -q 720 -c"
 alias dra "/usr/local/bin/dra-cla"
-alias anic "ani-cli -q 720 -c"
 alias drac "/usr/local/bin/dra-cla -c"
-alias vi nvim
-alias vim nvim
+alias dra4 "/usr/local/bin/dra-cla -q 480"
+alias dra4c "/usr/local/bin/dra-cla -q 480 -c"
+alias dra7 "/usr/local/bin/dra-cla -q 720"
+alias dra7c "/usr/local/bin/dra-cla -q 720 -c"
+alias vi $EDITOR
+alias vim $EDITOR
 
 # Set manpager
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -229,7 +238,7 @@ abbr bs "brew services"
 abbr bsc "brew search"
 abbr bsr "brew services restart"
 abbr bu "brew update"
-abbr bug "brew upgrade; brew reinstall neovim"
+abbr bug "brew upgrade"
 abbr c "clear"
 abbr cl "clear"
 abbr claer "clear"
@@ -295,6 +304,7 @@ abbr vpi "$EDITOR +PackerInstall"
 abbr vpu "$EDITOR +PackerUpdate"
 abbr vpug "$EDITOR +PackerUpgrade"
 abbr vt "$EDITOR ~/.config/tmux/tmux.conf"
+abbr vug "brew reinstall neovim; lvim +LvimUpdate"
 # abbr lv "$EDITOR (fd --type f --hidden --follow --exclude .git | fzf-tmux -p --reverse)"
 # abbr lva "$EDITOR ~/.config/alacritty/alacritty.yml"
 # abbr lvf "$EDITOR ~/.config/fish/config.fish"
@@ -304,11 +314,15 @@ abbr vt "$EDITOR ~/.config/tmux/tmux.conf"
 # abbr lvpu "$EDITOR +PackerUpdate"
 # abbr lvpug "$EDITOR +PackerUpgrade"
 # abbr lvt "$EDITOR ~/.config/tmux/tmux.conf"
-abbr fpg "flutter pub get"
-abbr fpu "flutter pub upgrade"
-abbr fpum "flutter pub upgrade --major-versions"
-abbr fbb "flutter pub run build_runner build --delete-conflicting-outputs"
-abbr fbw "flutter pub run build_runner watch --delete-conflicting-outputs"
-abbr fpa "flutter pub add"
-abbr fpad "flutter pub add --dev"
+abbr fpg "dart pub get"
+abbr fpu "dart pub upgrade"
+abbr fpum "dart pub upgrade --major-versions"
+abbr fbb "dart pub run build_runner build --delete-conflicting-outputs"
+abbr fbw "dart pub run build_runner watch --delete-conflicting-outputs"
+abbr fpa "dart pub add"
+abbr fpr "dart pub remove"
+abbr fpo "dart pub outdated"
+abbr fpa "dart pub add"
+abbr fp "dart pub"
+abbr fpad "dart pub add --dev"
 abbr spoonupdate "cd ~/.hammerspoon/Spoons/VimMode.spoon && git pull"

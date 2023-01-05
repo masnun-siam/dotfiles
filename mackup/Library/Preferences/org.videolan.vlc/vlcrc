@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 3.0.17.3
+###  vlc 3.0.18
 ###
 
 ###
@@ -551,7 +551,7 @@ macosx-continue-playback=1
 #sout-avi-subject=
 
 # Encoder (string)
-#sout-avi-encoder=VLC Media Player - 3.0.17.3 Vetinari
+#sout-avi-encoder=VLC Media Player - 3.0.18 Vetinari
 
 # Keywords (string)
 #sout-avi-keywords=
@@ -859,9 +859,6 @@ macosx-continue-playback=1
 
 # Frames Threads (integer)
 #dav1d-thread-frames=0
-
-# Tiles Threads (integer)
-#dav1d-thread-tiles=0
 
 [cdda] # Audio CD input
 
@@ -1838,7 +1835,7 @@ macosx-continue-playback=1
 [auhal] # HAL AudioUnit output
 
 # Audio volume (integer)
-auhal-volume=166
+auhal-volume=141
 
 # Last audio device (string)
 auhal-audio-device=0
@@ -3371,7 +3368,7 @@ auhal-audio-device=0
 #freetype-opacity=255
 
 # Text default color (integer)
-#freetype-color=16777215
+freetype-color=16776960
 
 # Force bold (boolean)
 #freetype-bold=0
@@ -3708,7 +3705,7 @@ video-filter=3d
 #audio-language=
 
 # Subtitle language (string)
-#sub-language=
+sub-language=en
 
 # Menu language (string)
 #menu-language=
