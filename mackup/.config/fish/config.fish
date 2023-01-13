@@ -30,6 +30,7 @@ set -g CRAFTED_EMACS_HOME ~/.config/crafted-emacs
 
 # aliases
 # Changing "ls" to "exa"
+alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
@@ -317,8 +318,8 @@ abbr vug "brew reinstall neovim; lvim +LvimUpdate"
 abbr fpg "dart pub get"
 abbr fpu "dart pub upgrade"
 abbr fpum "dart pub upgrade --major-versions"
-abbr fbb "dart pub run build_runner build --delete-conflicting-outputs"
-abbr fbw "dart pub run build_runner watch --delete-conflicting-outputs"
+abbr fbb "dart run build_runner build --delete-conflicting-outputs"
+abbr fbw "dart run build_runner watch --delete-conflicting-outputs"
 abbr fpa "dart pub add"
 abbr fpr "dart pub remove"
 abbr fpo "dart pub outdated"

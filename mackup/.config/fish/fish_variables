@@ -47,8 +47,8 @@ SETUVAR _fish_abbr_e:exit
 SETUVAR _fish_abbr_ee:espanso\x20edit
 SETUVAR _fish_abbr_er:espanso\x20restart
 SETUVAR _fish_abbr_fb:flutter\x20pub\x20run\x20build_runner\x20build\x20\x2d\x2ddelete\x2dconflicting\x2doutputs
-SETUVAR _fish_abbr_fbb:dart\x20pub\x20run\x20build_runner\x20build\x20\x2d\x2ddelete\x2dconflicting\x2doutputs
-SETUVAR _fish_abbr_fbw:dart\x20pub\x20run\x20build_runner\x20watch\x20\x2d\x2ddelete\x2dconflicting\x2doutputs
+SETUVAR _fish_abbr_fbb:dart\x20run\x20build_runner\x20build\x20\x2d\x2ddelete\x2dconflicting\x2doutputs
+SETUVAR _fish_abbr_fbw:dart\x20run\x20build_runner\x20watch\x20\x2d\x2ddelete\x2dconflicting\x2doutputs
 SETUVAR _fish_abbr_fp:dart\x20pub
 SETUVAR _fish_abbr_fpa:dart\x20pub\x20add
 SETUVAR _fish_abbr_fpad:dart\x20pub\x20add\x20\x2d\x2ddev
