@@ -1,141 +1,33 @@
 {
-  "dart.devToolsBrowser": "default",
-  "dart.previewSdkDaps": true,
-  "dart.flutterSdkPath": "~/Tools/flutter/",
-  "vim.neovimPath": "/opt/homebrew/bin/nvim",
-  "xml.format.maxLineWidth": 80,
-  "xml.format.splitAttributes": true,
   "explorer.compactFolders": false,
-  "editor.fontFamily": "SFMono Nerd Font",
-  "editor.fontSize": 18,
-  "editor.bracketPairColorization.enabled": true,
-  "zenMode.fullScreen": true,
-  "editor.wordWrapColumn": 90,
-  "editor.matchBrackets": "always",
-  "editor.wordWrap": "on",
+  "editor.fontFamily": "SFMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "vim.easymotion": true,
-  "vim.useSystemClipboard": true,
-  "vim.surround": true,
-  "vim.hlsearch": true,
-  "vim.foldfix": true,
-  "vim.incsearch": true,
-  "vim.leader": " ",
+  "editor.fontSize": 20,
+  "editor.fontWeight": "100",
+  "editor.wordWrap": "on",
+  "terminal.integrated.fontSize": 16,
+  "prettier.tabWidth": 2,
+  "editor.tabSize": 2,
+  "oneDarkPro.vivid": false,
+  "workbench.list.smoothScrolling": true,
+  "keyboard.dispatch": "keyCode",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.external.osxExec": "/System/Volumes/Data/Applications/iTerm.app",
   "editor.cursorBlinking": "solid",
   "editor.smoothScrolling": true,
-  "editor.renderLineHighlight": "gutter",
-  "editor.cursorSmoothCaretAnimation": true,
-  "terminal.external.osxExec": "Alacritty.app",
-  "editor.guides.bracketPairsHorizontal": "active",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "workbench.colorCustomizations": {
-    "editorHoverWidget.border": "#888888",
-  },
-  "vim.handleKeys": {
-    "<C-q>": false
-  },
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j","j"],
-      "after": ["<esc>"]
-    }
-  ],
-  
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "K"
-      ],
-      "after": [
-        "g",
-        "h"
-      ]
-    },
-    {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "vspacecode.space"
-      ]
-    },
-    {
-      "before": [
-        ","
-      ],
-      "commands": [
-        "vspacecode.space",
-        {
-          "command": "whichkey.triggerKey",
-          "args": "m"
-        }
-      ]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<leader>",
-        "a"
-      ],
-      "commands": [
-        "keyboard-quickfix.openQuickFix"
-      ]
-    },
-    {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "vspacecode.space"
-      ]
-    },
-    {
-      "before": [
-        ","
-      ],
-      "commands": [
-        "vspacecode.space",
-        {
-          "command": "whichkey.triggerKey",
-          "args": "m"
-        }
-      ]
-    }
-  ],
-  "dart.runPubGetOnPubspecChanges": "always",
-  "files.autoSave": "off",
-  "editor.tabSize": 2,
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-  "editor.codeLensFontFamily": "Fira Sans",
-  "editor.codeLensFontSize": 17,
-  "security.workspace.trust.emptyWindow": false,
-  "security.workspace.trust.enabled": false,
-  "editor.guides.bracketPairs": "active",
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.minimap.enabled": false,
-  "workbench.settings.editor": "json",
-  "vspacecode.bindingOverrides": [
-    {
-      "keys": "c.a",
-      "name": "Code Action",
-      "type": "command",
-      "command": "keyboard-quickfix.openQuickFix",
-      "icon": "lightbulb"
-    },
-    {
-      "keys": "c.f",
-      "name": "Format Buffer",
-      "type": "command",
-      "icon": "settings",
-      "command": "editor.action.format"
-    }
-  ],
-  "vim.enableNeovim": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "editor.formatOnSave": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": false,
+  "editor.guides.bracketPairsHorizontal": "active",
+  // "editor.lineHeight": 2.0,
   "dart.previewFlutterUiGuides": true,
+  "dart.flutterRememberSelectedDevice": true,
+  "dart.documentation": "summary",
   "[dart]": {
-    "editor.defaultFormatter": "Dart-Code.dart-code",
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
@@ -149,66 +41,133 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "git.confirmSync": false,
-  "git.autofetch": true,
   "workbench.startupEditor": "none",
-  "oneDarkPro.vivid": true,
-  "[jsonc]": {
+  "files.autoSave": "afterDelay",
+  "editor.cursorWidth": 2,
+  "workbench.settings.editor": "json",
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#ffff00",
+    "editorCursor.background": "#000000",
+    "editorHoverWidget.border": "#888888"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "security.workspace.trust.enabled": false,
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "redhat.telemetry.enabled": true,
+  "explorer.confirmDelete": false,
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": "m"
+        }
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": "m"
+        }
+      ]
+    }
+  ],
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "vim.enableNeovim": true,
+  "dart.runPubGetOnPubspecChanges": "prompt",
+  "dart.hotReloadOnSave": "manual",
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": -1,
+  "vim.statusBarColorControl": false,
+  "vspacecode.bindingOverrides": [
+    {
+      "keys": ["a"],
+      "name": "Quick Fix",
+      "type": "command",
+      "command": "vim.remap",
+      "args": {
+        "commands": [
+          // { "command": ":noh" },
+          {
+            "command": "keyboard-quickfix.openQuickFix"
+            // "args": { "kind": "refactor.extract" }
+          }
+        ]
+      }
+    }
+  ],
+  "go.toolsManagement.autoUpdate": true,
+  "advancedNewFile.exclude": {
+    "**/linux": true,
+    "**/macos": true,
+    "**/windows": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "node_modules": true,
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/.symlinks": true,
+    "**/.Pods": true,
+    "**/.gradle": true
+  },
   "search.exclude": {
+    "**/linux": true,
+    "**/macos": true,
+    "**/windows": true,
     "**/node_modules": true,
     "**/bower_components": true,
     "**/*.code-search": true,
-    "ios/.symlinks": true,
-    "build": true,
-    "android/.gradle": true
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "node_modules": true,
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/.symlinks": true,
+    "**/.Pods": true,
+    "**/.gradle": true
   },
   "files.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/*.code-search": true,
-    "ios/.symlinks": true,
-    "build": true,
-    "android/.gradle": true,
-    "**/.dart_tool": true,
-    "**/.plugins": true,
-    "**/.metadata": true,
-    "**/.flutter-plugins": true,
-    "**/.flutter-plugins-dependencies": true,
-    "**/.packages": true
+    "**/linux": true,
+    "**/macos": true,
+    "**/windows": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
   },
-  "advancedNewFile.exclude": {
-    "**/.dart_tool": true,
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/*.code-search": true,
-    "ios/.symlinks": true,
-    "build": true,
-    "android/.gradle": true
+  "[python]": {
+    "editor.formatOnType": true
   },
-  "autoHide.autoHidePanel": false,
-  "workbench.layoutControl.enabled": false,
-  "editor.renderWhitespace": "none",
-  "redhat.telemetry.enabled": true,
-  "task.problemMatchers.neverPrompt": {
-    "shell": true
-  },
-  "dart_data_class_generator.fromJson.enabled": false,
-  "dart_data_class_generator.toJson.enabled": false,
-  "dart_data_class_generator.fromMap.default_values": true,
-  "breadcrumbs.enabled": false,
-  "fzf-quick-open.ripgrepSearchStyle": "Ignore case",
-  "dart.warnWhenEditingFilesInPubCache": false,
-  "window.zoomLevel": 1,
+  "terminal.explorerKind": "external",
+  "xml.format.splitAttributes": false,
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.activityBar.visible": false,
-  "solidity.compileUsingRemoteVersion": "v0.8.10+commit.fc410830",
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
-  },
-  "versionlens.pub.dependencyProperties": [
-    "dependencies",
-    "dev_dependencies"
-  ],
-  "workbench.colorTheme": "Solarized Light",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

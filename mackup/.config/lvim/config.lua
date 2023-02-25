@@ -39,10 +39,10 @@ lvim.keys.normal_mode["gd"] = ":lua vim.lsp.buf.definition()<CR>"
 lvim.keys.normal_mode["gr"] = ":Telescope lsp_references<CR>"
 lvim.keys.normal_mode[";"] = ":"
 -- lvim.keys.normal_mode["gl"] = ":Lspsaga lsp_finder<CR>"
-lvim.keys.normal_mode["gp"] = ":Lspsaga peek_definition<CR>"
+-- lvim.keys.normal_mode["gp"] = ":Lspsaga peek_definition<CR>"
 -- lvim.keys.normal_mode["<leader>a"] = ":Lspsaga code_action<CR>"
 lvim.builtin.which_key.mappings["a"] = {
-  ":Lspsaga code_action<CR>", "Code Actions"
+  ":lua vim.lsp.buf.code_action()<CR>", "Code Actions"
 }
 lvim.builtin.which_key.mappings["F"] = {
   ":Telescope flutter commands<CR>", "Flutter Commands"
@@ -84,7 +84,7 @@ lvim.builtin.telescope.defaults.mappings = {
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["lr"] = {
-  ":Lspsaga rename<cr>",
+  ":lua vim.lsp.buf.rename()<CR>",
   "Rename"
 }
 
@@ -113,6 +113,8 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+
+lvim.builtin.treesitter.rainbow.enable = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -220,7 +222,7 @@ lvim.plugins = {
     "folke/trouble.nvim",
     -- cmd = "TroubleToggle",
   },
-  { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' },
+  { 'akinsho/flutter-tools.nvim', dependencies = 'nvim-lua/plenary.nvim' },
   { 'tpope/vim-surround' },
   { 'glepnir/lspsaga.nvim' },
   { 'phaazon/hop.nvim',
@@ -233,6 +235,7 @@ lvim.plugins = {
   { "Nash0x7E2/awesome-flutter-snippets" },
   { "RobertBrunhage/flutter-riverpod-snippets" },
   { "ArkrootHQ/freezed-snippets" },
+  { "p00f/nvim-ts-rainbow" },
 }
 
 require("flutter-tools").setup {

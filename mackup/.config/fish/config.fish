@@ -2,7 +2,7 @@ set fish_greeting ""
 
 set -gx TERM xterm-256color
 
-starship init fish | source
+# starship init fish | source
 zoxide init fish | source
 
 # Ctrl + l to clear screen
@@ -49,7 +49,7 @@ set -gx PATH ~/.local/bin $PATH
 # NodeJS
 set -gx PATH node_modules/.bin $PATH
 
-set -gx CHROME_EXECUTABLE '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
+# set -gx CHROME_EXECUTABLE '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
 
 # Go
 set -g GOPATH /usr/local/go
@@ -57,6 +57,7 @@ fish_add_path -g $GOPATH/bin
 fish_add_path -g ~/.config/bin
 fish_add_path -g /usr/local/bin
 fish_add_path -g ~/.pub-cache/bin
+fish_add_path -g /Users/siam/.cargo/bin
 
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'
@@ -90,11 +91,14 @@ fish_add_path -g /opt/homebrew/sbin
 fish_add_path -g "/Library/Frameworks/Python.framework/Versions/3.10/bin"
 
 # FLutter Setup
-fish_add_path -g ~/Tools/flutter/bin
+# fish_add_path -g ~/Tools/flutter/bin
 fish_add_path -g ~/Tools/flutter/bin/cache/dart-sdk/bin
-fish_add_path -g "/Applications/Android Studio.app/Contents/jre/Contents/Home/bin"
+fish_add_path -g "/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin"
 fish_add_path -g /opt/homebrew/opt/gnu-sed/libexec/gnubin
-set -g JAVA_HOME "/Applications/Android Studio.app/Contents/jre/Contents/Home"
+# set -g JAVA_HOME "/Applications/Android Studio.app/Contents/jre/Contents/Home"
+set -g JAVA_HOME "/Library/Java/JavaVirtualMachines/temurin-19.jdk/Contents/Home"
+# set -g JAVA_OPTS ""
+# set -g JAVA_HOME "/Applications/Android Studio.app/Contents/jbr/Contents/Home"
 # set -g ANDROID_SDK_HOME ~/Library/Android/sdk
 fish_add_path -g ~/Library/Android/sdk/platform-tools
 fish_add_path -g ~/Library/Android/sdk/tools
@@ -306,6 +310,7 @@ abbr vpu "$EDITOR +PackerUpdate"
 abbr vpug "$EDITOR +PackerUpgrade"
 abbr vt "$EDITOR ~/.config/tmux/tmux.conf"
 abbr vug "brew reinstall neovim; lvim +LvimUpdate"
+abbr spoonupdate "cd ~/.hammerspoon/Spoons/VimMode.spoon && git pull"
 # abbr lv "$EDITOR (fd --type f --hidden --follow --exclude .git | fzf-tmux -p --reverse)"
 # abbr lva "$EDITOR ~/.config/alacritty/alacritty.yml"
 # abbr lvf "$EDITOR ~/.config/fish/config.fish"
@@ -315,6 +320,8 @@ abbr vug "brew reinstall neovim; lvim +LvimUpdate"
 # abbr lvpu "$EDITOR +PackerUpdate"
 # abbr lvpug "$EDITOR +PackerUpgrade"
 # abbr lvt "$EDITOR ~/.config/tmux/tmux.conf"
+
+## Flutter expands
 abbr fpg "dart pub get"
 abbr fpu "dart pub upgrade"
 abbr fpum "dart pub upgrade --major-versions"
@@ -326,4 +333,19 @@ abbr fpo "dart pub outdated"
 abbr fpa "dart pub add"
 abbr fp "dart pub"
 abbr fpad "dart pub add --dev"
-abbr spoonupdate "cd ~/.hammerspoon/Spoons/VimMode.spoon && git pull"
+abbr dpg "dart pub get"
+abbr dpu "dart pub upgrade"
+abbr dpum "dart pub upgrade --major-versions"
+abbr dbb "dart run build_runner build --delete-conflicting-outputs"
+abbr dbw "dart run build_runner watch --delete-conflicting-outputs"
+abbr dpa "dart pub add"
+abbr dpr "dart pub remove"
+abbr dpo "dart pub outdated"
+abbr dpa "dart pub add"
+abbr dp "dart pub"
+abbr dpad "dart pub add --dev"
+
+abbr vg "very_good"
+abbr vgc "very_good create"
+abbr vgcp "very_good create -t flutter_pkg"
+abbr vgu "very_good update"
