@@ -1,0 +1,961 @@
+#+TITLE:   Personal DOOM Emacs Configuration
+#+AUTHOR:  Masnun Siam
+#+AUTO_TANGLE: t
+#+STARTUP: show
+
+* Table of Contents :TOC_3:noexport:
+- [[#welcome][Welcome]]
+- [[#configuration-files][Configuration Files]]
+  - [[#initel][init.el]]
+    - [[#input][Input]]
+    - [[#completion][Completion]]
+    - [[#user-interface][User Interface]]
+    - [[#editor][Editor]]
+    - [[#emacs][Emacs]]
+    - [[#terminal][Terminal]]
+    - [[#checkers][Checkers]]
+    - [[#tools][Tools]]
+    - [[#os][OS]]
+    - [[#languages][Languages]]
+    - [[#email][Email]]
+    - [[#apps][Apps]]
+    - [[#config][Config]]
+  - [[#configel][config.el]]
+    - [[#user-configuration][User Configuration]]
+    - [[#user-interface-config][User Interface Config]]
+    - [[#dired][Dired]]
+    - [[#org-mode][Org Mode]]
+    - [[#markdown][Markdown]]
+    - [[#projectile][Projectile]]
+    - [[#prettier-formatter][Prettier Formatter]]
+    - [[#cdlatex][CDLaTeX]]
+    - [[#file-extension-mode-association][File Extension Mode Association]]
+    - [[#automatically-revert-buffers-for-changed-files][Automatically Revert Buffers For Changed Files]]
+    - [[#rainbow-mode][Rainbow Mode]]
+    - [[#debugging][Debugging]]
+  - [[#packagesel][packages.el]]
+    - [[#packages][Packages]]
+
+* Welcome
+
+My personal configuration of [[https://github.com/hlissner/doom-emacs][DOOM Emacs]], written as an [[https://orgmode.org][Org Mode]] document.
+
+I'm using macOS and the version of emacs that I'm using is emacs-plus@29.0. It can be installed by these commands.
+
+#+begin_src bash
+brew tap d12frosted/emacs-plus
+brew install emacs-plus@29
+#+end_src
+
+* Configuration Files
+
+** init.el
+
+This file controls which Doom modules are enable and what order they load in. Remember to run =doom sync= after modifying it!
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+;;; init.el -*- lexical-binding: t; -*-
+#+END_SRC
+
+*NOTE* Press =SPC h d h= (or =C-h d h= for non-vim users) to access Doom's documentation. There you'll find a "Module Index" link where you'll find a comprehensive list of Doom's modules and what flags they support.
+
+*NOTE* Move your cursor over a module's name (or its flags) and press =K= (or =C-c c k= for non-vim users) to view its documentation. This works on flags as well (those symbols that start with a plus).
+
+Alternatively, press =gd= (or =C-c c d=) on a module to browse its directory (for easy access to its source code).
+
+*** Input
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+(doom! :input
+       ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
+       ;;chinese
+       ;;japanese
+       ;;layout            ; auie,ctsrnm is the superior home row
+#+END_SRC
+
+*** Completion
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :completion
+       company             ; the ultimate code completion backend
+       ;;helm              ; the *other* search engine for love and life
+       ;;ido               ; the other *other* search engine...
+       ;;ivy               ; a search engine for love and life
+       vertico             ; the search engine of the future
+#+END_SRC
+
+*** User Interface
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :ui
+       ;;deft                                  ; notational velocity for Emacs
+       doom                                    ; what makes DOOM look the way it does
+       doom-dashboard                          ; a nifty splash screen for Emacs
+       ;;doom-quit                             ; DOOM quit-message prompts when you quit Emacs
+       ;;(emoji +unicode)                      ; 🙂
+       hl-todo                                 ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
+       ;;hydra
+       indent-guides                           ; highlighted indent columns
+       ligatures                               ; ligatures and symbols to make your code pretty again
+       ;;minimap                               ; show a map of the code on the side
+       modeline                                ; snazzy, Atom-inspired modeline, plus API
+       nav-flash                               ; blink cursor line after big motions
+       ;;neotree                               ; a project drawer, like NERDTree for vim
+       ophints                                 ; highlight the region an operation acts on
+       (popup +defaults)                       ; tame sudden yet inevitable temporary windows
+       ;;tabs                                  ; a tab bar for Emacs
+       treemacs                                ; a project drawer, like neotree but cooler
+       unicode                               ; extended unicode support for various languages
+       vc-gutter                               ; vcs diff in the fringe
+       vi-tilde-fringe                         ; fringe tildes to mark beyond EOB
+       ;;window-select                         ; visually switch windows
+       workspaces                              ; tab emulation, persistence & separate workspaces
+       ;;zen                                   ; distraction-free coding or writing
+#+END_SRC
+
+*** Editor
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :editor
+       (evil +everywhere)                      ; come to the dark side, we have cookies
+       file-templates                          ; auto-snippets for empty files
+       fold                                    ; (nigh) universal code folding
+       (format +onsave)                        ; automated prettiness
+       ;;god                                   ; run Emacs commands without modifier keys
+       ;;lispy                                 ; vim for lisp, for people who don't like vim
+       multiple-cursors                        ; editing in many places at once
+       ;;objed                                 ; text object editing for the innocent
+       ;;parinfer                              ; turn lisp into python, sort of
+       ;;rotate-text                           ; cycle region at point between text candidates
+       snippets                                ; my elves. They type so I don't have to
+       word-wrap                               ; soft wrapping with language-aware indent
+#+END_SRC
+
+*** Emacs
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :emacs
+       (dired +icons)                                   ; making dired pretty [functional]
+       electric                                ; smarter, keyword-based electric-indent
+       ibuffer                                 ; interactive buffer management
+       undo                                    ; persistent, smarter undo for your inevitable mistakes
+       vc                                      ; version-control and Emacs, sitting in a tree
+#+END_SRC
+
+*** Terminal
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :term
+       eshell                                  ; the elisp shell that works everywhere
+       ;;shell                                 ; simple shell REPL for Emacs
+       ;;term                                  ; basic terminal emulator for Emacs
+       vterm                                   ; the best terminal emulation in Emacs
+#+END_SRC
+
+*** Checkers
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :checkers
+       syntax                                  ; tasing you for every semicolon you forget
+       (spell +flyspell +hunspell +everywhere) ; tasing you for misspelling mispelling
+       grammar                                 ; tasing grammar mistake every you make
+#+END_SRC
+
+*** Tools
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :tools
+       ;;ansible
+       ;;biblio                                ; Writes a PhD for you (citation needed)
+       (debugger +lsp)                         ; FIXME stepping through code, to help you add bugs
+       ;;direnv
+       (docker +lsp)
+       ;;editorconfig                          ; let someone else argue about tabs vs spaces
+       ein                                     ; tame Jupyter notebooks with emacs
+       (eval +overlay)                         ; run code, run (also, repls)
+       ;;gist                                  ; interacting with github gists
+       lookup                                  ; navigate your code and its documentation
+       lsp                                     ; M-x vscode
+       magit                                   ; a git porcelain for Emacs
+       make                                    ; run make tasks from Emacs
+       ;;pass                                  ; password manager for nerds
+       pdf                                     ; pdf enhancements
+       ;;prodigy                               ; FIXME managing external services & code builders
+       ;;rgb                                   ; creating color strings
+       ;;taskrunner                            ; taskrunner for all your projects
+       ;;terraform                             ; infrastructure as code
+       tmux                                  ; an API for interacting with tmux
+       tree-sitter                           ; syntax and parsing, sitting in a tree...
+       ;;upload                                ; map local to remote projects via ssh/ftp
+#+END_SRC
+
+*** OS
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :os
+       (:if IS-MAC macos)                      ; improve compatibility with macOS
+       tty                                     ; improve the terminal Emacs experience
+#+END_SRC
+
+*** Languages
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :lang
+       ;;agda                                  ; types of types of types of types...
+       ;;beancount                             ; mind the GAAP
+       (cc +lsp)                               ; C > C++ == 1
+       ;;clojure                               ; java with a lisp
+       ;;common-lisp                           ; if you've seen one lisp, you've seen them all
+       ;;coq                                   ; proofs-as-programs
+       ;;crystal                               ; ruby at the speed of c
+       ;;csharp                                ; unity, .NET, and mono shenanigans
+       data                                    ; config/data formats
+       (dart +flutter +lsp)                       ; paint ui and not much else
+       ;;dhall
+       ;;elixir                                ; erlang done right
+       ;;elm                                   ; care for a cup of TEA?
+       emacs-lisp                              ; drown in parentheses
+       ;;erlang                                ; an elegant language for a more civilized age
+       ;;ess                                   ; emacs speaks statistics
+       ;;factor
+       ;;faust                                 ; dsp, but you get to keep your soul
+       ;;fortran                               ; in FORTRAN, GOD is REAL (unless declared INTEGER)
+       ;;fsharp                                ; ML stands for Microsoft's Language
+       ;;fstar                                 ; (dependent) types and (monadic) effects and Z3
+       ;;gdscript                              ; the language you waited for
+       (go +lsp)                             ; the hipster dialect
+       ;;(graphql +lsp)                        ; Give queries a REST
+       ;;(haskell +lsp)                          ; a language that's lazier than I am
+       ;;hy                                    ; readability of scheme w/ speed of python
+       ;;idris                                 ; a language you can depend on
+       (json +lsp)                             ; At least it ain't XML
+       (java +lsp)                             ; the poster child for carpal tunnel syndrome
+       (javascript +lsp)                       ; all(hope(abandon(ye(who(enter(here))))))
+       ;;(julia +lsp)                            ; a better, faster MATLAB
+       kotlin                                ; a better, slicker Java(Script)
+       (latex +cdlatex +lsp                    )    ; writing papers in Emacs has never been so fun
+       ;;lean                                  ; for folks with too much to prove
+       ;;ledger                                ; be audit you can be
+       ;;lua                                   ; one-based indices? one-based indices
+       (markdown +grip)                        ; writing docs for people to ignore
+       ;;nim                                   ; python + lisp at the speed of c
+       ;;nix                                   ; I hereby declare "nix geht mehr!"
+       ;;ocaml                                 ; an objective camel
+       (org +dragndrop +jupyter +pretty)       ; organize your plain life in plain text
+       ;;php                                   ; perl's insecure younger brother
+       ;;plantuml                              ; diagrams for confusing people more
+       ;;purescript                            ; javascript, but functional
+
+       (python +lsp)                           ; beautiful is better than ugly
+       ;;qt                                    ; the 'cutest' gui framework ever
+       ;;racket                                ; a DSL for DSLs
+       ;;raku                                  ; the artist formerly known as perl6
+       ;;rest                                  ; Emacs as a REST client
+       ;;rst                                   ; ReST in peace
+       ;;(ruby +rails)                         ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+       (rust +lsp)                             ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       ;;scala                                 ; java, but good
+       ;;(scheme +guile)                       ; a fully conniving family of lisps
+       (sh +fish +lsp)                         ; she sells {ba,z,fi}sh shells on the C xor
+       ;;sml
+       ;;solidity                              ; do you need a blockchain? No.
+       swift                                 ; who asked for emoji variables?
+       ;;terra                                 ; Earth and Moon in alignment for performance.
+       web                                     ; the tubes
+       (yaml +lsp)                             ; JSON, but readable
+       ;;zig                                   ; C, but simpler
+#+END_SRC
+
+*** Email
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :email
+       ;;(mu4e +org +gmail)
+       ;;notmuch
+       ;;(wanderlust +gmail)
+#+END_SRC
+
+*** Apps
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :app
+       calendar
+       ;;emms
+       everywhere        ; *leave* Emacs!? You must be joking
+       ;;irc               ; how neckbeards socialize
+       (rss +org)        ; emacs as an RSS reader
+       ;;twitter           ; twitter client https://twitter.com/vnought
+#+END_SRC
+
+*** Config
+
+#+BEGIN_SRC emacs-lisp :tangle init.el
+       :config
+       ;;literate
+       (default +bindings +smartparens))
+#+END_SRC
+
+** config.el
+
+Place your private configuration here! Remember, you do not need to run =doom sync= after modifying this file!
+
+Here are some additional functions/macros that could help you configure Doom:
+
+- =load!= for loading external *.el files relative to this one
+- =use-package!= for configuring packages
+- =after!= for running code after a package has loaded
+- =add-load-path!= for adding directories to the =load-path=, relative to this file. Emacs searches the =load-path= when you load packages with =require= or =use-package=.
+- =map!= for binding new keys
+
+To get information about any of these functions/macros, move the cursor over the highlighted symbol at press =K= (non-evil users must press =C-c c k=).
+This will open documentation for it, including demos of how they are used.
+
+You can also try =gd= (or =C-c c d=) to jump to their definition and see how they are implemented.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+#+END_SRC
+
+*** User Configuration
+
+Some functionality uses this to identify you, e.g. GPG configuration, email clients, file templates and snippets.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq user-full-name "Masnun Siam")
+#+END_SRC
+
+*** User Interface Config
+
+**** Fonts
+
+Doom exposes five (optional) variables for controlling fonts in Doom. Here are the three important ones:
+
+- =doom-font=
+- =doom-variable-pitch-font=
+- =doom-big-font= -- used for =doom-big-font-mode=; use this for presentations or streaming.
+
+They all accept either a font-spec, font string ("Input Mono-12"), or xlfd font string. You generally only need these two:
+
+#+BEGIN_EXAMPLE
+(setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "sans" :size 13))
+#+END_EXAMPLE
+
+Set regular, variable pitch, and big fonts.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-font (font-spec :family "BlexMono Nerd Font" :size 16)
+      doom-variable-pitch-font (font-spec :family "Ubuntu Nerd Font" :size 16)
+      doom-big-font (font-spec :family "BlexMono Nerd Font" :size 24)
+      doom-unicode-font (font-spec :family "FiraCode Nerd Font" :size 16))
+#+END_SRC
+
+Enable *bold* and /italic/ text.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+#+END_SRC
+
+Make comments and keywords /italicized/.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
+#+END_SRC
+
+**** Theme
+
+There are two ways to load a theme. Both assume the theme is installed and available. You can either set =doom-theme= or manually load a theme with the =load-theme= function.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-theme 'dracula-pro-pro)
+#+END_SRC
+
+**** Borderless
+I normally hide the titlebar since it has no use
+#+begin_src emacs-lisp :tangle config.el
+(add-to-list 'default-frame-alist '(undecorated . t))
+#+end_src
+
+**** Opacity
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(doom/set-frame-opacity 100)
+#+END_SRC
+
+**** Line Numbers
+
+This determines the style of line numbers in effect. If set to =nil=, line numbers are disabled. For relative line numbers, set this to =relative=.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq display-line-numbers-type t)
+#+END_SRC
+
+**** Tab Width
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq-default tab-width 4)
+#+END_SRC
+
+**** Highlight Indent Guides
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+;; (setq highlight-indent-guides-method 'nil')
+;; (setq highlight-indent-guides-responsive 'stack)
+;; (setq highlight-indent-guides-delay 0)
+#+END_SRC
+
+**** Modeline
+
+If non-nil, cause imenu to see ~doom-modeline~ declarations. This is done by adjusting ~lisp-imenu-generic-expression~ to include support for finding ~doom-modeline-def-*~ forms. Must be set before loading doom-modeline.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+;; (setq doom-modeline-support-imenu t)
+#+END_SRC
+
+How tall the mode-line should be. It's only respected in GUI. If the actual char height is larger, it respects the actual height.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-height 30)
+#+END_SRC
+
+How wide the mode-line bar should be. It's only respected in GUI.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-bar-width 4)
+#+END_SRC
+
+Whether to use hud instead of default bar. It's only respected in GUI.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-hud nil)
+#+END_SRC
+
+The limit of the window width. If ~window-width~ is smaller than the limit, some information won't be displayed. It can be an integer or a float number. `nil' means no limit."
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-window-width-limit 85)
+#+END_SRC
+
+How to detect the project root. nil means to use ~default-directory~. The project management packages have some issues on detecting project root. e.g. ~projectile~ doesn't handle symlink folders well, while ~project~ is unable to handle sub-projects. You can specify one if you encounter the issue.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-project-detection 'auto)
+#+END_SRC
+
+Determines the style used by ~doom-modeline-buffer-file-name~.
+
+Given ~/Projects/FOSS/emacs/lisp/comint.el
+  auto => emacs/lisp/comint.el (in a project) or comint.el
+  truncate-upto-project => ~/P/F/emacs/lisp/comint.el
+  truncate-from-project => ~/Projects/FOSS/emacs/l/comint.el
+  truncate-with-project => emacs/l/comint.el
+  truncate-except-project => ~/P/F/emacs/l/comint.el
+  truncate-upto-root => ~/P/F/e/lisp/comint.el
+  truncate-all => ~/P/F/e/l/comint.el
+  truncate-nil => ~/Projects/FOSS/emacs/lisp/comint.el
+  relative-from-project => emacs/lisp/comint.el
+  relative-to-project => lisp/comint.el
+  file-name => comint.el
+  buffer-name => comint.el<2> (uniquify buffer name)
+
+If you are experiencing the laggy issue, especially while editing remote files with tramp, please try ~file-name~ style. Please refer to https://github.com/bbatsov/projectile/issues/657.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-buffer-file-name-style 'auto)
+#+END_SRC
+
+Whether display icons in the mode-line. While using the server mode in GUI, should set the value explicitly.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-icon t)
+#+END_SRC
+
+Whether display the icon for ~major-mode~. It respects ~doom-modeline-icon~.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-major-mode-icon t)
+#+END_SRC
+
+Whether display the colorful icon for ~major-mode~. It respects ~all-the-icons-color-icons~.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-major-mode-color-icon t)
+#+END_SRC
+
+Whether display the icon for the buffer state. It respects ~doom-modeline-icon~.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-buffer-state-icon t)
+#+END_SRC
+
+Whether display the modification icon for the buffer. It respects ~doom-modeline-icon~ and ~doom-modeline-buffer-state-icon~.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-buffer-modification-icon t)
+#+END_SRC
+
+Whether to use unicode as a fallback (instead of ASCII) when not using icons.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-unicode-fallback nil)
+#+END_SRC
+
+Whether display the buffer name.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-buffer-name t)
+#+END_SRC
+
+Whether display the minor modes in the mode-line.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-minor-modes nil)
+#+END_SRC
+
+If non-nil, a word count will be added to the selection-info modeline segment.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-enable-word-count t)
+#+END_SRC
+
+Major modes in which to display word count continuously. Also applies to any derived modes. Respects ~doom-modeline-enable-word-count~. If it brings the sluggish issue, disable ~doom-modeline-enable-word-count~ or remove the modes from ~doom-modeline-continuous-word-count-modes~.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode))
+#+END_SRC
+
+Whether display the buffer encoding.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-buffer-encoding t)
+#+END_SRC
+
+Whether display the indentation information.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-indent-info t)
+#+END_SRC
+
+If non-nil, only display one number for checker information if applicable.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-checker-simple-format t)
+#+END_SRC
+
+The maximum number displayed for notifications.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-number-limit 99)
+#+END_SRC
+
+The maximum displayed length of the branch name of version control.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-vcs-max-length 12)
+#+END_SRC
+
+Whether display the workspace name. Non-nil to display in the mode-line.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-workspace-name t)
+#+END_SRC
+
+Whether display the perspective name. Non-nil to display in the mode-line.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-persp-name t)
+#+END_SRC
+
+If non nil the default perspective name is displayed in the mode-line.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-display-default-persp-name nil)
+#+END_SRC
+
+If non nil the perspective name is displayed alongside a folder icon.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-persp-icon t)
+#+END_SRC
+
+Whether display the `lsp' state. Non-nil to display in the mode-line.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-lsp t)
+#+END_SRC
+
+Whether display the GitHub notifications. It requires ~ghub~ package.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-github nil)
+#+END_SRC
+
+The interval of checking GitHub.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-github-interval (* 30 60))
+#+END_SRC
+
+Whether display the modal state icon. Including ~evil~, ~overwrite~, ~god~, ~ryo~ and ~xah-fly-keys~, etc.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-modal-icon t)
+#+END_SRC
+
+Whether display the mu4e notifications. It requires ~mu4e-alert~ package.
+Also enable the start of mu4e-alert.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-mu4e nil)
+;; (mu4e-alert-enable-mode-line-display)
+#+END_SRC
+
+Whether display the gnus notifications.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-gnus t)
+#+END_SRC
+
+Whether gnus should automatically be updated and how often (set to 0 or smaller than 0 to disable)
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-gnus-timer 2)
+#+END_SRC
+
+Whether groups should be excluded when gnus automatically being updated.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-gnus-excluded-groups '("dummy.group"))
+#+END_SRC
+
+Whether display the IRC notifications. It requires ~circe~ or ~erc~ package.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-irc nil)
+#+END_SRC
+
+Function to stylize the irc buffer names.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-irc-stylize 'identity)
+#+END_SRC
+
+Whether display the environment version. Or for individual languages.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-env-version t)
+(setq doom-modeline-env-enable-python t)
+(setq doom-modeline-env-enable-ruby t)
+(setq doom-modeline-env-enable-perl t)
+(setq doom-modeline-env-enable-go t)
+(setq doom-modeline-env-enable-elixir t)
+(setq doom-modeline-env-enable-rust t)
+#+END_SRC
+
+Change the executables to use for the language version string.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-env-python-executable "python") ; or `python-shell-interpreter'
+(setq doom-modeline-env-ruby-executable "ruby")
+(setq doom-modeline-env-perl-executable "perl")
+(setq doom-modeline-env-go-executable "go")
+(setq doom-modeline-env-elixir-executable "iex")
+(setq doom-modeline-env-rust-executable "rustc")
+#+END_SRC
+
+What to display as the version while a new one is being loaded.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-env-load-string "...")
+#+END_SRC
+
+Hooks that run before/after the modeline version string is updated.
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq doom-modeline-before-update-env-hook nil)
+(setq doom-modeline-after-update-env-hook nil)
+#+END_SRC
+
+*** Dired
+Changing the dired listing mode to show all files
+#+begin_src emacs-lisp :tangle config.el
+(setq dired-lising-switches "-la")
+#+end_src
+*** Org Mode
+
+If you use =org= and don't want your org files in the default location below, change =org-directory=. It must be set before org loads!
+
+**** Directory
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq org-directory "~/org/")
+#+END_SRC
+
+**** Babel Tangle Keybinding
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(map! :leader
+      :desc "Org babel tangle" "m B" #'org-babel-tangle)
+#+END_SRC
+
+**** Auto Tangle
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(use-package! org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode)
+  :config
+  (setq org-auto-tangle-default t)
+)
+#+END_SRC
+
+**** Source Code Indentation
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq org-src-preserve-indentation nil
+      org-edit-src-content-indentation 0)
+#+END_SRC
+
+**** Hide Emphasis Markers
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq org-hide-emphasis-markers t)
+#+END_SRC
+
+**** Ellipsis
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq org-ellipsis " ▼ ")
+#+END_SRC
+
+**** Fonts
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(after! org-faces
+  (defun org-colors-dracula ()
+    "Enable Dracula colors for Org headers."
+    (interactive)
+    (dolist
+        (face
+         '((org-level-1 1.7 "#8be9fd" ultra-bold)
+           (org-level-2 1.6 "#bd93f9" extra-bold)
+           (org-level-3 1.5 "#50fa7b" bold)
+           (org-level-4 1.4 "#ff79c6" semi-bold)
+           (org-level-5 1.3 "#9aedfe" normal)
+           (org-level-6 1.2 "#caa9fa" normal)
+           (org-level-7 1.1 "#5af78e" normal)
+           (org-level-8 1.0 "#ff92d0" normal)))
+      (set-face-attribute (nth 0 face) nil :font doom-variable-pitch-font :weight (nth 3 face) :height (nth 1 face) :foreground (nth 2 face)))
+    (set-face-attribute 'org-table nil :font doom-font :weight 'normal :height 1.0 :foreground "#bfafdf"))
+  ;; Load our desired org-colors-* theme on startup
+  (org-colors-dracula))
+#+END_SRC
+
+**** Superstar
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆"))
+(setq org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?✦))) ; changes +/- symbols in item lists
+(add-hook! org-mode (org-superstar-mode))
+#+END_SRC
+
+*** Markdown
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(custom-set-faces
+ '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight bold :family "variable-pitch"))))
+ '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 1.8))))
+ '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.4))))
+ '(markdown-header-face-3 ((t (:inherit markdown-header-face :height 1.2)))))
+#+END_SRC
+
+*** Projectile
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(setq projectile-project-search-path '("~/Documents/projects/flutter/personal/" "~/Documents/projects/flutter/roxarth/" "~/Documents/projects/flutter/BF/" "~/.doom.d" "~/.config/"))
+#+END_SRC
+
+*** Prettier Formatter
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(add-hook! 'web-mode-hook 'prettier-js-mode)
+#+END_SRC
+
+*** CDLaTeX
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(map! :map cdlatex-mode-map
+    :i "TAB" #'cdlatex-tab)
+#+END_SRC
+
+*** File Extension Mode Association
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
+#+END_SRC
+
+*** Automatically Revert Buffers For Changed Files
+
+Revert buffers when the underlying file has changed
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t)
+#+END_SRC
+
+*** Rainbow Mode
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(define-globalized-minor-mode global-rainbow-mode rainbow-mode
+  (lambda () (rainbow-mode 1)))
+(global-rainbow-mode 1)
+#+END_SRC
+
+*** Debugging
+
+**** Keybindings
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(map! :map dap-mode-map
+      :leader
+      :prefix ("d" . "dap")
+      ;; basics
+      :desc "dap next"          "n" #'dap-next
+      :desc "dap step in"       "i" #'dap-step-in
+      :desc "dap step out"      "o" #'dap-step-out
+      :desc "dap continue"      "c" #'dap-continue
+      :desc "dap hydra"         "h" #'dap-hydra
+      :desc "dap debug restart" "r" #'dap-debug-restart
+      :desc "dap debug"         "s" #'dap-debug
+
+      ;; debug
+      :prefix ("dd" . "Debug")
+      :desc "dap debug recent"  "r" #'dap-debug-recent
+      :desc "dap debug last"    "l" #'dap-debug-last
+
+      ;; eval
+      :prefix ("de" . "Eval")
+      :desc "eval"                "e" #'dap-eval
+      :desc "eval region"         "r" #'dap-eval-region
+      :desc "eval thing at point" "s" #'dap-eval-thing-at-point
+      :desc "add expression"      "a" #'dap-ui-expressions-add
+      :desc "remove expression"   "d" #'dap-ui-expressions-remove
+
+      :prefix ("db" . "Breakpoint")
+      :desc "dap breakpoint toggle"      "b" #'dap-breakpoint-toggle
+      :desc "dap breakpoint condition"   "c" #'dap-breakpoint-condition
+      :desc "dap breakpoint hit count"   "h" #'dap-breakpoint-hit-condition
+      :desc "dap breakpoint log message" "l" #'dap-breakpoint-log-message)
+#+END_SRC
+
+**** Python
+
+#+BEGIN_SRC emacs-lisp :tangle config.el
+(after! dap-mode
+  (setq dap-python-debugger 'debugpy))
+#+END_SRC
+
+
+**** Github Copilot
+#+begin_src emacs-lisp :tangle config.el
+;; accept completion from copilot and fallback to company
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+#+end_src
+
+** packages.el
+
+To install a package with Doom you must declare them here and run =doom sync= on the command line, then restart Emacs for the changes to take effect -- or use =M-x doom/reload=.
+
+To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
+
+#+BEGIN_EXAMPLE
+(package! some-package)
+#+END_EXAMPLE
+
+To install a package directly from a remote git repo, you must specify a =:recipe=. You'll find documentation on what =:recipe= accepts here: https://github.com/raxod502/straight.el#the-recipe-format
+
+#+BEGIN_EXAMPLE
+(package! another-package
+  :recipe (:host github :repo "username/repo"))
+#+END_EXAMPLE
+
+If the package you are trying to install does not contain a PACKAGENAME.el file, or is located in a subdirectory of the repo, you'll need to specify =:files= in the =:recipe=:
+
+#+BEGIN_EXAMPLE
+(package! this-package
+  :recipe (:host github :repo "username/repo"
+           :files ("some-file.el" "src/lisp/*.el")))
+#+END_EXAMPLE
+
+If you'd like to disable a package included with Doom, you can do so here with the =:disable= property:
+
+#+BEGIN_EXAMPLE
+(package! builtin-package :disable t)
+#+END_EXAMPLE
+
+You can override the recipe of a built in package without having to specify all the properties for =:recipe=. These will inherit the rest of its recipe from Doom or MELPA/ELPA/Emacsmirror:
+
+#+BEGIN_EXAMPLE
+(package! builtin-package :recipe (:nonrecursive t))
+(package! builtin-package-2 :recipe (:repo "myfork/package"))
+#+END_EXAMPLE
+
+Specify a =:branch= to install a package from a particular branch or tag. This is required for some packages whose default branch isn't =master= (which our package manager can't deal with; see raxod502/straight.el#279)
+
+#+BEGIN_EXAMPLE
+(package! builtin-package :recipe (:branch "develop"))
+#+END_EXAMPLE
+
+Use =:pin= to specify a particular commit to install.
+
+#+BEGIN_EXAMPLE
+(package! builtin-package :pin "1a2b3c4d5e")
+#+END_EXAMPLE
+
+Doom's packages are pinned to a specific commit and updated from release to release. The =unpin!= macro allows you to unpin single packages...
+
+#+BEGIN_EXAMPLE
+(unpin! pinned-package)
+#+END_EXAMPLE
+
+...or multiple packages
+
+#+BEGIN_EXAMPLE
+;(unpin! pinned-package another-pinned-package)
+#+END_EXAMPLE
+
+...Or *all* packages (NOT RECOMMENDED; will likely break things)
+
+#+BEGIN_EXAMPLE
+;(unpin! t)
+#+END_EXAMPLE
+
+#+BEGIN_SRC emacs-lisp :tangle packages.el
+;; -*- no-byte-compile: t; -*-
+;;; $DOOMDIR/packages.el
+#+END_SRC
+
+*** Packages
+
+#+BEGIN_SRC emacs-lisp :tangle packages.el
+(package! org-auto-tangle)
+(package! git-modes)
+(package! vimrc-mode)
+(package! prettier-js)
+(package! rainbow-mode)
+(package! systemd)
+(package! pkgbuild-mode)
+(package! lua-mode)
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
+#+END_SRC
