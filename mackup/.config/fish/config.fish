@@ -2,7 +2,7 @@ set fish_greeting ""
 
 set -gx TERM xterm-256color
 
-# starship init fish | source
+starship init fish | source
 zoxide init fish | source
 
 # Ctrl + l to clear screen
@@ -16,7 +16,7 @@ set -g theme_hide_hostname no
 set -g theme_hostname always
 
 set -U BAT_THEME Dracula 
-set -U EDITOR lvim
+set -U EDITOR nvim
 set -U FZF_CTRL_R_OPTS "--reverse --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 set -U FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -U FZF_DEFAULT_OPTS "--color=spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD"
@@ -54,10 +54,10 @@ set -gx PATH node_modules/.bin $PATH
 # Go
 set -g GOPATH /usr/local/go
 fish_add_path -g $GOPATH/bin
-fish_add_path -g ~/.config/bin
 fish_add_path -g /usr/local/bin
 fish_add_path -g ~/.pub-cache/bin
 fish_add_path -g /Users/siam/.cargo/bin
+fish_add_path -g /Users/siam/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'
@@ -103,6 +103,7 @@ set -g JAVA_HOME "/Library/Java/JavaVirtualMachines/temurin-19.jdk/Contents/Home
 fish_add_path -g ~/Library/Android/sdk/platform-tools
 fish_add_path -g ~/Library/Android/sdk/tools
 fish_add_path -g $HOME/Tools/flutter/.pub-cache/bin
+fish_add_path -g $HOME/Documents/Projects/Python/samftp/
 
 # doom
 alias doom "~/.emacs.d/bin/doom"

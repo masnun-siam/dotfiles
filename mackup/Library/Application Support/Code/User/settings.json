@@ -169,5 +169,6 @@
   "workbench.activityBar.visible": false,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.inlineSuggest.enabled": true
 }

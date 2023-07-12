@@ -12,7 +12,7 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
 window:
-  opacity: 0.9
+  opacity: 1
   padding:
     x: 18
     y: 16
@@ -170,40 +170,68 @@ schemes:
       cyan: '#59dffc'
       white: '#e6e6d1'
 
+  Personal: &Personal
+    primary:
+      background: '#1A1A1A'
+      foreground: '#F1F1F1'
+    cursor:
+      text: CellBackground
+      cursor: '#FFFFFF'
+    selection:
+      text: CellForeground
+      background: '#FFFFFF'
+    normal:
+      black: '#121212'
+      red: '#A52AFF'
+      green: '#7129FF'
+      yellow: '#3D2AFF'
+      blue: '#2B4FFF'
+      cyan: '#28B9FF'
+      white: '#F1F1F1'
+      purple: '#2883FF'
+    bright:
+      black: '#666666'
+      red: '#BA5AFF'
+      green: '#905AFF'
+      yellow: '#685AFF'
+      blue: '#5C78FF' 
+      cyan: '#5A68FF'
+      purple: '#5EA2FF'
+      white: '#FFFFFF'
 # Available colors
 # *DoomOne
 # *Dracula
-colors: *Dracula
+colors: *Personal
 
 key_bindings:
-  - {key: Comma, mods: Command, chars: "\x02,"}
-  - {key: D, mods: Command, chars: "\x02K"}
+  - {key: Comma, mods: Command, chars: "\x13,"}
+  - {key: D, mods: Command, chars: "\x13K"}
   - {key: F, mods: Command, chars: "lfcd\n"}
-  - {key: P, mods: Command, chars: ":GitFiles\n"}
+  - {key: P, mods: Command, chars: ":Telescope find_files\n"}
   - {key: P, mods: Command|Shift, chars: ":Commands\n"}
-  - {key: G, mods: Command, chars: "\x02g"}
-  - {key: K, mods: Command, chars: "\x02s"}
-  - {key: Key1, mods: Command, chars: "\x021"}
-  - {key: Key2, mods: Command, chars: "\x022"}
-  - {key: Key3, mods: Command, chars: "\x023"}
-  - {key: Key4, mods: Command, chars: "\x024"}
-  - {key: Key5, mods: Command, chars: "\x025"}
-  - {key: Key6, mods: Command, chars: "\x026"}
-  - {key: Key7, mods: Command, chars: "\x027"}
-  - {key: Key8, mods: Command, chars: "\x028"}
-  - {key: Key9, mods: Command, chars: "\x029"}
-  - {key: L, mods: Command, chars: "\x02L"}
-  - {key: LBracket, mods: Command, chars: "\x02["}
-  - {key: LBracket, mods: Command|Shift, chars: "\x02p"}
-  - {key: O, mods: Command, chars: "\x02u"}
-  - {key: E, mods: Command|Shift, chars: "\x02%"}
-  - {key: E, mods: Command, chars: "\x02\""}
+  - {key: G, mods: Command, chars: "\x13g"}
+  - {key: K, mods: Command, chars: "\x13s"}
+  - {key: Key1, mods: Command, chars: "\x131"}
+  - {key: Key2, mods: Command, chars: "\x132"}
+  - {key: Key3, mods: Command, chars: "\x133"}
+  - {key: Key4, mods: Command, chars: "\x134"}
+  - {key: Key5, mods: Command, chars: "\x135"}
+  - {key: Key6, mods: Command, chars: "\x136"}
+  - {key: Key7, mods: Command, chars: "\x137"}
+  - {key: Key8, mods: Command, chars: "\x138"}
+  - {key: Key9, mods: Command, chars: "\x139"}
+  - {key: L, mods: Command, chars: "\x13L"}
+  - {key: LBracket, mods: Command, chars: "\x13["}
+  - {key: LBracket, mods: Command|Shift, chars: "\x13p"}
+  - {key: O, mods: Command, chars: "\x13u"}
+  - {key: E, mods: Command|Shift, chars: "\x13%"}
+  - {key: E, mods: Command, chars: "\x13\""}
   - {key: Q, mods: Command, chars: ":q\n"}
-  - {key: RBracket, mods: Command|Shift, chars: "\x02n"}
+  - {key: RBracket, mods: Command|Shift, chars: "\x13n"}
   - {key: S, mods: Command, chars: ":w\n"}
   - {key: S, mods: Command|Shift, chars: ":wa\n"}
-  - {key: Semicolon, mods: Command, chars: "\x02:"}
-  - {key: T, mods: Command, chars: "\x02c"}
-  - {key: J, mods: Command, chars: "\x02T"}
-  - {key: W, mods: Command, chars: "\x02x"}
-  - {key: Z, mods: Command, chars: "\x02z"}
+  - {key: Semicolon, mods: Command, chars: "\x13:"}
+  - {key: T, mods: Command, chars: "\x13c"}
+  - {key: J, mods: Command, chars: "\x02\x54"}
+  - {key: W, mods: Command, chars: "\x13x"}
+  - {key: Z, mods: Command, chars: "\x13z"}
