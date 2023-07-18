@@ -91,8 +91,8 @@ fish_add_path -g /opt/homebrew/sbin
 fish_add_path -g "/Library/Frameworks/Python.framework/Versions/3.10/bin"
 
 # FLutter Setup
-# fish_add_path -g ~/Tools/flutter/bin
-fish_add_path -g ~/Tools/flutter/bin/cache/dart-sdk/bin
+fish_add_path -g ~/development/flutter/bin
+fish_add_path -g ~/development/flutter/bin/cache/dart-sdk/bin
 fish_add_path -g "/Applications/Android Studio.app/Contents/jbr/Contents/Home/bin"
 fish_add_path -g /opt/homebrew/opt/gnu-sed/libexec/gnubin
 # set -g JAVA_HOME "/Applications/Android Studio.app/Contents/jre/Contents/Home"
@@ -299,7 +299,7 @@ abbr ta "tmux a"
 abbr tat "tmux attach -t"
 abbr td "t dotfiles"
 abbr tn "t nutiliti"
-abbr tn "tmux new -s (pwd | sed 's/.*\///g')"
+abbr tn "tmux -u new -s (pwd | sed 's/.*\///g')"
 abbr u "~/.config/bin/update.sh"
 abbr v "$EDITOR (fd --type f --hidden --follow --exclude .git | fzf-tmux -p --reverse)"
 abbr va "$EDITOR ~/.config/alacritty/alacritty.yml"
@@ -350,3 +350,6 @@ abbr vg "very_good"
 abbr vgc "very_good create"
 abbr vgcp "very_good create -t flutter_pkg"
 abbr vgu "very_good update"
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+

@@ -1,11 +1,11 @@
 {
   "explorer.compactFolders": false,
-  "editor.fontFamily": "SFMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "FiraCode Nerd Font, SFMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 20,
-  "editor.fontWeight": "100",
+  "editor.fontWeight": "300",
   "editor.wordWrap": "on",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 15,
   "prettier.tabWidth": 2,
   "editor.tabSize": 2,
   "oneDarkPro.vivid": false,
@@ -21,9 +21,11 @@
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": false,
+  "editor.guides.indentation": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.guides.bracketPairs": "active",
   "editor.guides.bracketPairsHorizontal": "active",
-  // "editor.lineHeight": 2.0,
+  "editor.lineHeight": 2.0,
   "dart.previewFlutterUiGuides": true,
   "dart.flutterRememberSelectedDevice": true,
   "dart.documentation": "summary",
@@ -98,9 +100,14 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.zoomLevel": -1,
   "vim.statusBarColorControl": false,
   "vspacecode.bindingOverrides": [
+    {
+      "keys": ["s", "t"],
+      "name": "Ripgrep",
+      "type": "command",
+      "command": "extension.ripgrep"
+    },
     {
       "keys": ["a"],
       "name": "Quick Fix",
@@ -122,9 +129,11 @@
     "**/linux": true,
     "**/macos": true,
     "**/windows": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
     "**/.git": true,
     "**/.DS_Store": true,
-    "**/node_modules": true,
     "node_modules": true,
     "**/build": true,
     "**/.dart_tool": true,
@@ -165,10 +174,25 @@
   "terminal.explorerKind": "external",
   "xml.format.splitAttributes": false,
   "git.openRepositoryInParentFolders": "never",
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "Shuvo Deb Color Theme V-0.1",
   "workbench.activityBar.visible": false,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.inlineSuggest.enabled": true
+  "editor.inlineSuggest.enabled": true,
+  "cSpell.userWords": [
+    "Autovalidate",
+    "Cupertino",
+    "easymotion",
+    "esbenp",
+    "firestore",
+    "neovim",
+    "nvim",
+    "Pubspec",
+    "quickfix",
+    "RGBO",
+    "vspacecode",
+    "whichkey"
+  ],
+  "git.confirmSync": false
 }
